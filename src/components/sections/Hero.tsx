@@ -11,7 +11,7 @@ import { useLagosClock } from '../../hooks/useLagosClock';
 const HeroScene = lazy(() => import('../three/HeroScene').then((m) => ({ default: m.HeroScene })));
 const AmbientField = lazy(() => import('../three/AmbientField').then((m) => ({ default: m.AmbientField })));
 
-const headlineWords = ['Engineered', 'in', 'Lagos.', 'Trusted'];
+const headlineWords = ['Engineered', 'in', 'Abuja.', 'Trusted'];
 const headlineWords2 = ['by', 'the', 'world.'];
 
 export function Hero() {
@@ -42,16 +42,22 @@ export function Hero() {
     <section
       id="top"
       ref={containerRef}
-      className="relative isolate flex min-h-[100svh] flex-col overflow-hidden pt-28 md:pt-36"
+      className="relative isolate flex min-h-[100svh] flex-col overflow-hidden pt-20 md:pt-24"
     >
       {/* Background visuals */}
       <div className="absolute inset-0 -z-10">
+        <img
+          src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=2400&q=80"
+          alt=""
+          className="absolute inset-0 h-full w-full object-cover opacity-[0.07]"
+          loading="eager"
+        />
         <div className="absolute inset-0 grid-bg opacity-60" />
-        <div className="hero-glow absolute left-1/2 top-[34%] -translate-x-1/2 -translate-y-1/2">
+        <div className="hero-glow absolute left-1/2 top-[30%] -translate-x-1/2 -translate-y-1/2">
           <GlowOrb size={1100} color="amber" intensity="strong" />
         </div>
-        <GlowOrb className="left-[8%] top-[18%]" size={420} color="ember" intensity="soft" />
-        <GlowOrb className="right-[6%] top-[26%]" size={380} color="copper" intensity="soft" />
+        <GlowOrb className="left-[8%] top-[12%]" size={420} color="ember" intensity="soft" />
+        <GlowOrb className="right-[6%] top-[18%]" size={380} color="copper" intensity="soft" />
         <Suspense fallback={null}>
           <AmbientField className="absolute inset-0 opacity-70 mask-fade-y" />
         </Suspense>
@@ -80,7 +86,7 @@ export function Hero() {
               </span>
               Now booking Q3 — limited engagements
               <span className="mx-1 h-3 w-px bg-white/15" />
-              <span className="font-mono text-amber/90">v4.0 · LOS</span>
+              <span className="font-mono text-amber/90">v4.0 · ABV</span>
             </span>
           </motion.div>
 
@@ -129,7 +135,7 @@ export function Hero() {
             variants={fadeUp}
             className="mt-8 max-w-2xl text-balance text-base leading-relaxed text-off-white/55 md:text-lg"
           >
-            Hijaz is an elite product studio out of Yaba, building the software that runs Africa —
+            Hijaz is an elite product studio in Abuja, building the software that runs Africa —
             and exporting that craft to Stripe, Linear, and the rest of the world. We compress a
             year of engineering into a quarter, without compromise.
           </motion.p>
@@ -196,10 +202,10 @@ export function Hero() {
               </div>
               <div className="flex items-center gap-2 rounded-full border border-white/5 bg-white/[0.02] px-3 py-1 text-[11px] font-mono text-off-white/45">
                 <span className="h-1.5 w-1.5 rounded-full bg-amber/80" />
-                hijaz.ng / canvas / production · LOS
+                hijaz.ng / canvas / production · ABV
               </div>
               <div className="hidden font-mono text-[11px] text-off-white/35 md:block">
-                {lagosTime} GMT+1
+                {lagosTime} WAT
               </div>
             </div>
 
@@ -286,7 +292,7 @@ export function Hero() {
                     </div>
                     <div>
                       <p className="text-xs text-off-white/85">Ship to production</p>
-                      <p className="text-[10px] text-off-white/40">Lead engineer · Lagos pod 03</p>
+                      <p className="text-[10px] text-off-white/40">Lead engineer · Abuja pod 03</p>
                     </div>
                   </div>
                   <span className="font-mono text-[10px] text-off-white/40">⌘ + K</span>
@@ -343,7 +349,7 @@ export function Hero() {
           {[
             { kpi: '₦4.8T', label: 'Annualized payments routed' },
             { kpi: '14', label: 'African markets live' },
-            { kpi: '42', label: 'Senior staff · Lagos' },
+            { kpi: '42', label: 'Senior staff · Abuja' },
             { kpi: '99.97%', label: 'Production uptime' },
           ].map((item) => (
             <div key={item.label} className="bg-charcoal/85 px-5 py-5">
@@ -401,9 +407,9 @@ function SideRail({ side, lagosTime }: { side: 'left' | 'right'; lagosTime?: str
       <div className="flex flex-col items-center gap-3" style={{ writingMode: 'vertical-rl' }}>
         {side === 'left' ? (
           <>
-            <span>est. 2014 · lagos</span>
+            <span>est. 2014 · abuja</span>
             <span className="text-amber/70">·</span>
-            <span>{lagosTime ? `lagos ${lagosTime}` : 'live · pod 03'}</span>
+            <span>{lagosTime ? `abj ${lagosTime}` : 'live · pod 03'}</span>
           </>
         ) : (
           <>
@@ -434,7 +440,7 @@ function FloatingAnnotations({ lagosTime }: { lagosTime: string }) {
               <span className="relative h-2 w-2 rounded-full bg-amber" />
             </span>
           }
-          eyebrow="Lagos · Yaba HQ"
+          eyebrow="Abuja · Central HQ"
           title={`${lagosTime}`}
           sub="13 engineers online · pod 03 deploying"
         />
@@ -463,7 +469,7 @@ function FloatingAnnotations({ lagosTime }: { lagosTime: string }) {
         <FloatingCard
           icon={<span className="text-amber">★</span>}
           eyebrow="Awwwards SOTD"
-          title="Lagos Mercantile"
+          title="Abuja Mercantile"
           sub="this week’s site of the day"
         />
       </motion.div>

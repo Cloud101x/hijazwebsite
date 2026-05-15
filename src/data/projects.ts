@@ -18,18 +18,18 @@ const u = (id: string, w = 800) =>
 export const projects: Project[] = [
   {
     index: '01',
-    client: 'Lagos Mercantile Bank',
+    client: 'Abuja Mercantile Bank',
     category: 'Fintech / Pan-African banking',
     title: 'Sub-second payment rails across 14 African markets',
     description:
-      'A unified ledger and routing engine moving ₦4.8T per quarter for one of West Africa’s largest commercial banks. NIBSS, Mastercard, and 9 mobile-money operators on a single mesh.',
+      'A unified ledger and routing engine moving ₦4.8T per quarter for one of West Africa\'s largest commercial banks. NIBSS, Mastercard, and 9 mobile-money operators on a single mesh.',
     year: '2025',
     award: 'Awwwards SOTD',
     metric: { label: 'Latency P99', value: '186ms' },
     tags: ['Go + gRPC mesh', 'NIBSS · CBN compliant', 'Multi-currency ledger', 'Edge in 6 regions'],
-    cover: u('photo-1642790551116-18e150f248e3', 1200),
+    cover: u('photo-1551288049-bebda4e38f71', 1200),
     scenes: [
-      { tag: 'Treasury console', image: u('photo-1642790551116-18e150f248e3', 600) },
+      { tag: 'Treasury console', image: u('photo-1551288049-bebda4e38f71', 600) },
       { tag: 'Routing graph', image: u('photo-1639762681485-074b7f938ba0', 600) },
       { tag: 'Risk panel', image: u('photo-1644088379091-d574269d422f', 600) },
     ],
@@ -45,9 +45,9 @@ export const projects: Project[] = [
     award: 'Disrupt Africa — Startup of the Year',
     metric: { label: 'Daily turns', value: '8.4M' },
     tags: ['LLM orchestration', '6 African languages', 'Voice + chat', 'On-prem deployable'],
-    cover: u('photo-1555066931-4365d14bab8c', 1200),
+    cover: u('photo-1677442136019-777752548707', 1200),
     scenes: [
-      { tag: 'Agent shell', image: u('photo-1555066931-4365d14bab8c', 600) },
+      { tag: 'Agent shell', image: u('photo-1677442136019-777752548707', 600) },
       { tag: 'Language eval', image: u('photo-1635776062127-d379bfcba9f8', 600) },
       { tag: 'Conversation graph', image: u('photo-1517694712202-14dd9538aa97', 600) },
     ],
@@ -58,13 +58,13 @@ export const projects: Project[] = [
     category: 'Mobility / Last-mile',
     title: 'Operating system for 38,000 dispatch riders',
     description:
-      'Driver app, dispatcher console, and on-device routing across Lagos, Accra, Nairobi, and Kigali. 2.1M deliveries a month with 99.94% on-time.',
+      'Driver app, dispatcher console, and on-device routing across Abuja, Lagos, Accra, Nairobi, and Kigali. 2.1M deliveries a month with 99.94% on-time.',
     year: '2024',
     metric: { label: 'On-time rate', value: '99.94%' },
     tags: ['React Native', 'Offline-first', 'Mapbox tiles', 'Postgres + ClickHouse'],
-    cover: u('photo-1593941707882-a5bba14938c7', 1200),
+    cover: u('photo-1581092160562-40aa08ad7819', 1200),
     scenes: [
-      { tag: 'Rider app', image: u('photo-1593941707882-a5bba14938c7', 600) },
+      { tag: 'Rider app', image: u('photo-1581092160562-40aa08ad7819', 600) },
       { tag: 'Fleet map', image: u('photo-1581090700227-1e37b190418e', 600) },
       { tag: 'Dispatcher OS', image: u('photo-1597767151904-67d34dd5d29c', 600) },
     ],

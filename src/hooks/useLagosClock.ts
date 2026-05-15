@@ -1,14 +1,14 @@
 import { useEffect, useState } from 'react';
 
 function format(date: Date): string {
-  const lagos = new Intl.DateTimeFormat('en-GB', {
+  const abuja = new Intl.DateTimeFormat('en-GB', {
     timeZone: 'Africa/Lagos',
     hour: '2-digit',
     minute: '2-digit',
     second: '2-digit',
     hour12: false,
   }).format(date);
-  return lagos;
+  return abuja;
 }
 
 export function useLagosClock(): string {

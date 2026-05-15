@@ -14,17 +14,17 @@ const u = (id: string) =>
 export const testimonials: Testimonial[] = [
   {
     quote:
-      "Hijaz rebuilt our settlement engine in eleven weeks. The team that took us six months to assemble in Lagos couldn't have shipped this in a year. We treat them as a permanent senior pod now.",
+      "Hijaz rebuilt our settlement engine in eleven weeks. The team that took us six months to assemble couldn't have shipped this in a year. We treat them as a permanent senior pod now.",
     name: 'Adaeze Okonkwo',
     role: 'Chief Technology Officer',
-    company: 'Lagos Mercantile Bank',
+    company: 'Abuja Mercantile Bank',
     initials: 'AO',
     avatar: u('photo-1531123897727-8f129e1688ce'),
     highlight: true,
   },
   {
     quote:
-      "The most senior engineering team I've worked with on the continent — and I've shipped at three unicorns from Yaba to Cape Town. They have opinions, they're right, and they move.",
+      "The most senior engineering team I've worked with on the continent — and I've shipped at three unicorns from Abuja to Cape Town. They have opinions, they're right, and they move.",
     name: 'Olumide Adebanjo',
     role: 'VP Engineering',
     company: 'Kẹlẹ AI',
@@ -42,7 +42,7 @@ export const testimonials: Testimonial[] = [
   },
   {
     quote:
-      'Awwwards-grade craft and FAANG-grade engineering — built and shipped from Lagos. I do not know how they do both. The work is, simply, the best on the continent right now.',
+      'Awwwards-grade craft and FAANG-grade engineering — built and shipped from Abuja. I do not know how they do both. The work is, simply, the best on the continent right now.',
     name: 'Dr. Ibrahim Yusuf',
     role: 'Chief Product Officer',
     company: 'Ọmọ Health',

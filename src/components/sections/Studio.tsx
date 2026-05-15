@@ -4,7 +4,7 @@ import { GlowOrb } from '../ui/GlowOrb';
 import { team } from '../../data/team';
 
 const studioImage =
-  'https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1400&q=80';
+  'https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&w=1400&q=80';
 
 export function Studio() {
   return (
@@ -16,18 +16,18 @@ export function Studio() {
         <div className="grid grid-cols-1 items-end gap-10 md:grid-cols-[1.4fr_1fr]">
           <SectionHeading
             align="left"
-            eyebrow="Inside the studio · Lagos"
+            eyebrow="Inside the studio · Abuja"
             title={
               <>
                 A small room of <br />
                 <span className="font-serif italic text-amber">very senior</span> people.
               </>
             }
-            description="Forty-two engineers, designers, and operators across Lagos, Abuja, Accra, and Nairobi. Average tenure in the craft: 12 years. Average ego: small."
+            description="Forty-two engineers, designers, and operators across Abuja, Lagos, Accra, and Nairobi. Average tenure in the craft: 12 years. Average ego: small."
           />
 
           <div className="flex flex-wrap gap-2 md:justify-end">
-            {['Lagos · HQ', 'Abuja', 'Accra', 'Nairobi'].map((city, i) => (
+            {['Abuja · HQ', 'Lagos', 'Accra', 'Nairobi'].map((city, i) => (
               <span
                 key={city}
                 className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.03] px-3.5 py-1.5 text-xs text-off-white/70"
@@ -64,13 +64,13 @@ export function Studio() {
               <div className="absolute inset-x-6 bottom-6 flex items-end justify-between gap-6 md:inset-x-8 md:bottom-8">
                 <div>
                   <p className="font-mono text-[11px] uppercase tracking-[0.22em] text-amber/80">
-                    Studio · Lagos HQ · Yaba
+                    Studio · Abuja HQ · Central Business District
                   </p>
                   <p className="mt-3 max-w-md font-serif text-2xl italic leading-tight text-off-white md:text-3xl">
                     "We optimize for the work being undeniable. Everything else is a side effect."
                   </p>
                   <p className="mt-3 text-xs text-off-white/55">
-                    — Adeola Hijazi, founding letter, Lagos, 2014
+                    — Adeola Hijazi, founding letter, Abuja, 2014
                   </p>
                 </div>
                 <div className="hidden shrink-0 rounded-2xl border border-white/10 bg-black/40 p-4 backdrop-blur-md md:block">

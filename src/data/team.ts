@@ -13,14 +13,14 @@ export const team: TeamMember[] = [
   {
     name: 'Adeola Hijazi',
     role: 'Founder · Principal Engineer',
-    location: 'Lagos, NG',
+    location: 'Abuja, NG',
     avatar: u('photo-1507003211169-0a1dd7228f2d'),
     former: 'ex-Flutterwave · ex-Stripe',
   },
   {
     name: 'Chiamaka Eze',
     role: 'Head of Design',
-    location: 'Lagos, NG',
+    location: 'Abuja, NG',
     avatar: u('photo-1531123897727-8f129e1688ce'),
     former: 'ex-Paystack · ex-Linear',
   },

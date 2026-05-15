@@ -83,8 +83,8 @@ export function CTA() {
                   <div className="mt-5 space-y-4">
                     {[
                       { label: 'Name', value: 'Adaeze Okonkwo' },
-                      { label: 'Company', value: 'Lagos Mercantile Bank' },
-                      { label: 'Email', value: 'adaeze@lmb.ng' },
+                      { label: 'Company', value: 'Abuja Mercantile Bank' },
+                      { label: 'Email', value: 'adaeze@amb.ng' },
                     ].map((field) => (
                       <div key={field.label}>
                         <p className="text-[10px] uppercase tracking-[0.2em] text-off-white/35">

@@ -15,7 +15,7 @@ const footerNav = [
   },
   {
     label: 'Offices',
-    links: ['Lagos · HQ', 'Abuja', 'Accra', 'Nairobi', 'London (satellite)'],
+    links: ['Abuja · HQ', 'Lagos', 'Accra', 'Nairobi', 'London (satellite)'],
   },
 ];
 
@@ -38,9 +38,14 @@ export function Footer() {
             </a>
 
             <p className="mt-6 max-w-md text-sm leading-relaxed text-off-white/55">
-              An elite product engineering studio out of Lagos, architecting category-defining
+              An elite product engineering studio out of Abuja, architecting category-defining
               software for Africa's most ambitious teams — and the world's. Established 2014.
             </p>
+
+            <address className="mt-4 text-sm not-italic text-off-white/35">
+              14 Ronald Nyere Street, Central Business District<br />
+              Abuja, FCT 900211, Nigeria
+            </address>
 
             <div className="mt-8 flex flex-wrap items-center gap-3">
               {[
@@ -111,7 +116,7 @@ export function Footer() {
 
         <div className="mt-20 border-t border-white/5 py-8">
           <div className="flex flex-col items-start justify-between gap-5 text-xs text-off-white/40 md:flex-row md:items-center">
-            <p>© 2025 Hijaz Studio Ltd. RC 1948302 · Engineered in Lagos with quiet obsession.</p>
+            <p>© 2025 Hijaz Studio Ltd. RC 1948302 · Engineered in Abuja with quiet obsession.</p>
             <div className="flex flex-wrap items-center gap-x-6 gap-y-2">
               <a href="#" className="transition-colors hover:text-off-white">
                 Privacy
