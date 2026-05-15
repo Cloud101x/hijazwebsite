@@ -13,9 +13,7 @@
     <script>
       (function() {
         var t = localStorage.getItem('hijaz-theme');
-        if (t === 'light' || t === 'dark') {
-          document.documentElement.setAttribute('data-theme', t);
-        } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        if (t === 'dark') {
           document.documentElement.setAttribute('data-theme', 'dark');
         } else {
           document.documentElement.setAttribute('data-theme', 'light');
