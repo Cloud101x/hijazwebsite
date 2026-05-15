@@ -135,9 +135,9 @@ export function Hero() {
             variants={fadeUp}
             className="mt-8 max-w-2xl text-balance text-base leading-relaxed text-off-white/55 md:text-lg"
           >
-            Hijaz is an elite product studio in Abuja, building the software that runs Africa —
-            and exporting that craft to Stripe, Linear, and the rest of the world. We compress a
-            year of engineering into a quarter, without compromise.
+            Hijaz is a product studio in Abuja that builds software fast —
+            with the architecture and craft your product deserves. We ship a year's worth
+            of engineering in a quarter, without compromise.
           </motion.p>
 
           <motion.div variants={fadeUp} className="mt-10 flex flex-wrap items-center justify-center gap-3">
@@ -246,8 +246,8 @@ export function Hero() {
                     {[
                       { label: 'Velocity', value: '4.6×', sub: 'vs incumbent' },
                       { label: 'Time-to-prod', value: '21d', sub: 'avg engagement' },
-                      { label: 'Quality gate', value: '99.97%', sub: 'uptime SLA' },
-                      { label: 'Settled / 24h', value: '₦18.4B', sub: 'across rails' },
+                      { label: 'Code quality', value: '99.97%', sub: 'uptime SLA' },
+                      { label: 'Projects live', value: '180+', sub: 'across 14 markets' },
                     ].map((m) => (
                       <div key={m.label} className="rounded-xl border border-white/5 bg-white/[0.02] p-3">
                         <p className="text-[10px] font-mono uppercase tracking-[0.18em] text-off-white/40">
@@ -347,7 +347,7 @@ export function Hero() {
           className="relative mx-auto mt-16 grid max-w-6xl grid-cols-2 gap-px overflow-hidden rounded-2xl border border-white/8 bg-white/5 md:grid-cols-4"
         >
           {[
-            { kpi: '₦4.8T', label: 'Annualized payments routed' },
+            { kpi: '180+', label: 'Products shipped' },
             { kpi: '14', label: 'African markets live' },
             { kpi: '42', label: 'Senior staff · Abuja' },
             { kpi: '99.97%', label: 'Production uptime' },
@@ -454,9 +454,9 @@ function FloatingAnnotations({ lagosTime }: { lagosTime: string }) {
       >
         <FloatingCard
           icon={<span className="text-amber">↑</span>}
-          eyebrow="Last 24h · routed"
-          title="₦18.42B"
-          sub="across NIBSS, MTN, Flutterwave, Paystack"
+          eyebrow="Last 30 days"
+          title="180+"
+          sub="projects shipped across fintech, AI, logistics, health"
         />
       </motion.div>
 
@@ -469,7 +469,7 @@ function FloatingAnnotations({ lagosTime }: { lagosTime: string }) {
         <FloatingCard
           icon={<span className="text-amber">★</span>}
           eyebrow="Awwwards SOTD"
-          title="Abuja Mercantile"
+          title="NovaPay Africa"
           sub="this week’s site of the day"
         />
       </motion.div>

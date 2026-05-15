@@ -14,10 +14,10 @@ const u = (id: string) =>
 export const testimonials: Testimonial[] = [
   {
     quote:
-      "Hijaz rebuilt our settlement engine in eleven weeks. The team that took us six months to assemble couldn't have shipped this in a year. We treat them as a permanent senior pod now.",
+      "Hijaz rebuilt our entire banking platform in ten weeks — frontend, backend, mobile, the works. The team we assembled in-house couldn't have shipped this in a year. We treat them as a permanent senior pod now.",
     name: 'Adaeze Okonkwo',
     role: 'Chief Technology Officer',
-    company: 'Abuja Mercantile Bank',
+    company: 'NovaPay Africa',
     initials: 'AO',
     avatar: u('photo-1531123897727-8f129e1688ce'),
     highlight: true,

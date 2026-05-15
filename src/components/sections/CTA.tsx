@@ -83,8 +83,8 @@ export function CTA() {
                   <div className="mt-5 space-y-4">
                     {[
                       { label: 'Name', value: 'Adaeze Okonkwo' },
-                      { label: 'Company', value: 'Abuja Mercantile Bank' },
-                      { label: 'Email', value: 'adaeze@amb.ng' },
+                      { label: 'Company', value: 'NovaPay Africa' },
+                      { label: 'Email', value: 'adaeze@novapay.ng' },
                     ].map((field) => (
                       <div key={field.label}>
                         <p className="text-[10px] uppercase tracking-[0.2em] text-off-white/35">
@@ -100,7 +100,7 @@ export function CTA() {
                         What are we shipping?
                       </p>
                       <div className="mt-1.5 rounded-xl border border-white/8 bg-white/[0.03] px-4 py-3 text-sm text-off-white/70">
-                        Settlement engine for cross-border NGN ↔ USD payments. Sub-200ms across…
+                        A modern banking platform — mobile-first, real-time ledger, built in 10 weeks from brief to live.
                       </div>
                     </div>
                   </div>

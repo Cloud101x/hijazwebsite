@@ -17,8 +17,8 @@ const stats: Stat[] = [
   { value: 99.97, suffix: '%', label: 'Production uptime', description: 'across all systems we currently operate', decimals: 2 },
   { value: 21, suffix: 'd', label: 'Avg. time-to-prod', description: 'from kickoff to first revenue-generating release' },
   { value: 14, label: 'African markets live', description: 'NG, GH, KE, ZA, EG, RW, CI, SN, TZ, UG and more' },
-  { value: 180, suffix: '+', label: 'Engagements shipped', description: 'across fintech, AI, mobility, healthcare' },
-  { value: 4.8, prefix: '₦', suffix: 'T', label: 'Annualized payments', description: 'flowing through software we built or operate', decimals: 1 },
+  { value: 180, suffix: '+', label: 'Products shipped', description: 'across fintech, AI, logistics, healthcare' },
+  { value: 96, suffix: '%', label: 'Client retention', description: 'partners who return for a second engagement or more' },
 ];
 
 function CountUp({ to, decimals = 0 }: { to: number; decimals?: number }) {

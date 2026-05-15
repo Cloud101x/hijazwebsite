@@ -18,26 +18,26 @@ const u = (id: string, w = 800) =>
 export const projects: Project[] = [
   {
     index: '01',
-    client: 'Abuja Mercantile Bank',
-    category: 'Fintech / Pan-African banking',
-    title: 'Sub-second payment rails across 14 African markets',
+    client: 'NovaPay Africa',
+    category: 'Fintech / Digital banking platform',
+    title: 'A modern banking platform built in 10 weeks',
     description:
-      'A unified ledger and routing engine moving ₦4.8T per quarter for one of West Africa\'s largest commercial banks. NIBSS, Mastercard, and 9 mobile-money operators on a single mesh.',
+      'Full-stack mobile banking application with real-time ledger, KYC orchestration, and compliance automation. Launched across Nigeria and Ghana with 99.97% uptime from day one.',
     year: '2025',
     award: 'Awwwards SOTD',
-    metric: { label: 'Latency P99', value: '186ms' },
-    tags: ['Go + gRPC mesh', 'NIBSS · CBN compliant', 'Multi-currency ledger', 'Edge in 6 regions'],
+    metric: { label: 'Time to live', value: '10 wk' },
+    tags: ['React Native', 'Go microservices', 'Real-time ledger', 'CBN compliant'],
     cover: u('photo-1551288049-bebda4e38f71', 1200),
     scenes: [
-      { tag: 'Treasury console', image: u('photo-1551288049-bebda4e38f71', 600) },
-      { tag: 'Routing graph', image: u('photo-1639762681485-074b7f938ba0', 600) },
-      { tag: 'Risk panel', image: u('photo-1644088379091-d574269d422f', 600) },
+      { tag: 'Dashboard', image: u('photo-1551288049-bebda4e38f71', 600) },
+      { tag: 'Architecture', image: u('photo-1639762681485-074b7f938ba0', 600) },
+      { tag: 'Mobile app', image: u('photo-1644088379091-d574269d422f', 600) },
     ],
   },
   {
     index: '02',
     client: 'Kẹlẹ AI',
-    category: 'AI / Africa-first language',
+    category: 'AI / Enterprise platform',
     title: 'Multilingual agent platform for African enterprises',
     description:
       'A production-grade agent runtime fluent in Yoruba, Igbo, Hausa, Swahili, Amharic, and Pidgin — now powering CX for 11 banks and 4 telcos across the continent.',
@@ -55,7 +55,7 @@ export const projects: Project[] = [
   {
     index: '03',
     client: 'Sahel Logistics',
-    category: 'Mobility / Last-mile',
+    category: 'Logistics / Operations platform',
     title: 'Operating system for 38,000 dispatch riders',
     description:
       'Driver app, dispatcher console, and on-device routing across Abuja, Lagos, Accra, Nairobi, and Kigali. 2.1M deliveries a month with 99.94% on-time.',
@@ -72,13 +72,13 @@ export const projects: Project[] = [
   {
     index: '04',
     client: 'Ọmọ Health',
-    category: 'Healthtech / Pan-African',
+    category: 'Healthtech / SaaS platform',
     title: 'Clinical intelligence platform for 240 hospitals',
     description:
-      'A privacy-first patient data fabric and a beautifully fast clinician interface. Live in Nigeria, Ghana, Kenya — processing 14M patient events daily.',
+      'A privacy-first patient data fabric and a beautifully fast clinician interface. Built end-to-end in 14 weeks. Live in Nigeria, Ghana, Kenya — processing 14M patient events daily.',
     year: '2024',
     award: 'Webby — Africa & Middle East',
-    metric: { label: 'Events / day', value: '14M' },
+    metric: { label: 'Build time', value: '14 wk' },
     tags: ['NDPR compliant', 'Kafka pipelines', 'FHIR fabric', 'React + RSC'],
     cover: u('photo-1576091160550-2173dba999ef', 1200),
     scenes: [
