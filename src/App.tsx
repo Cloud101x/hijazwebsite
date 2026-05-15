@@ -12,6 +12,7 @@ import { TechStack } from './components/sections/TechStack';
 import { WhyChooseUs } from './components/sections/WhyChooseUs';
 import { Process } from './components/sections/Process';
 import { Stats } from './components/sections/Stats';
+import { Studio } from './components/sections/Studio';
 import { Testimonials } from './components/sections/Testimonials';
 import { CTA } from './components/sections/CTA';
 import { Footer } from './components/sections/Footer';
@@ -75,6 +76,7 @@ export default function App() {
         <WhyChooseUs />
         <Process />
         <Stats />
+        <Studio />
         <Testimonials />
         <CTA />
       </main>

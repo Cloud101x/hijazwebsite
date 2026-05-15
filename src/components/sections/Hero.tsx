@@ -4,15 +4,20 @@ import { gsap } from 'gsap';
 import { GlowOrb } from '../ui/GlowOrb';
 import { AmberButton } from '../ui/AmberButton';
 import { fadeUp, stagger } from '../../lib/motion';
+import { heroPartners } from '../../data/partners';
+import { press } from '../../data/press';
+import { useLagosClock } from '../../hooks/useLagosClock';
 
 const HeroScene = lazy(() => import('../three/HeroScene').then((m) => ({ default: m.HeroScene })));
 const AmbientField = lazy(() => import('../three/AmbientField').then((m) => ({ default: m.AmbientField })));
 
-const headlineWords = ['Engineering', 'the', 'frontier', 'of', 'digital'];
+const headlineWords = ['Engineered', 'in', 'Lagos.', 'Trusted'];
+const headlineWords2 = ['by', 'the', 'world.'];
 
 export function Hero() {
   const containerRef = useRef<HTMLDivElement>(null);
   const ribbonRef = useRef<HTMLDivElement>(null);
+  const lagosTime = useLagosClock();
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -37,7 +42,7 @@ export function Hero() {
     <section
       id="top"
       ref={containerRef}
-      className="relative isolate flex min-h-[100svh] items-center justify-center overflow-hidden pt-32 pb-20 md:pt-40 md:pb-28"
+      className="relative isolate flex min-h-[100svh] flex-col overflow-hidden pt-28 md:pt-36"
     >
       {/* Background visuals */}
       <div className="absolute inset-0 -z-10">
@@ -51,9 +56,16 @@ export function Hero() {
           <AmbientField className="absolute inset-0 opacity-70 mask-fade-y" />
         </Suspense>
         <div className="absolute inset-x-0 bottom-0 h-48 bg-gradient-to-t from-obsidian via-obsidian/70 to-transparent" />
+
+        {/* Cinematic corner brackets */}
+        <CornerBrackets />
+
+        {/* Side rails */}
+        <SideRail side="left" lagosTime={lagosTime} />
+        <SideRail side="right" />
       </div>
 
-      <div className="container-custom relative z-10">
+      <div className="container-custom relative z-10 flex-1">
         <motion.div
           variants={stagger(0.05, 0.07)}
           initial="hidden"
@@ -68,7 +80,7 @@ export function Hero() {
               </span>
               Now booking Q3 — limited engagements
               <span className="mx-1 h-3 w-px bg-white/15" />
-              <span className="text-amber/90">v4.0</span>
+              <span className="font-mono text-amber/90">v4.0 · LOS</span>
             </span>
           </motion.div>
 
@@ -83,7 +95,7 @@ export function Hero() {
                   initial={{ y: '110%', opacity: 0, filter: 'blur(12px)' }}
                   animate={{ y: '0%', opacity: 1, filter: 'blur(0px)' }}
                   transition={{
-                    delay: 0.35 + i * 0.08,
+                    delay: 0.3 + i * 0.08,
                     duration: 1.2,
                     ease: [0.16, 1, 0.3, 1],
                   }}
@@ -94,23 +106,32 @@ export function Hero() {
               ))}
             </span>
             <br />
-            <motion.span
-              initial={{ opacity: 0, y: 30, filter: 'blur(10px)' }}
-              animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
-              transition={{ delay: 1.05, duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
-              className="font-serif italic text-amber"
-            >
-              experiences.
-            </motion.span>
+            <span className="inline-flex flex-wrap items-baseline justify-center gap-x-3 gap-y-1">
+              {headlineWords2.map((word, i) => (
+                <motion.span
+                  key={word + i}
+                  initial={{ y: '110%', opacity: 0, filter: 'blur(12px)' }}
+                  animate={{ y: '0%', opacity: 1, filter: 'blur(0px)' }}
+                  transition={{
+                    delay: 0.95 + i * 0.08,
+                    duration: 1.2,
+                    ease: [0.16, 1, 0.3, 1],
+                  }}
+                  className={`inline-block ${word === 'world.' ? 'font-serif italic text-amber' : ''}`}
+                >
+                  {word}
+                </motion.span>
+              ))}
+            </span>
           </motion.h1>
 
           <motion.p
             variants={fadeUp}
             className="mt-8 max-w-2xl text-balance text-base leading-relaxed text-off-white/55 md:text-lg"
           >
-            Hijaz is an elite product studio architecting category-defining software for the world's
-            most ambitious teams. We compress a year of engineering into a quarter — without
-            compromise.
+            Hijaz is an elite product studio out of Yaba, building the software that runs Africa —
+            and exporting that craft to Stripe, Linear, and the rest of the world. We compress a
+            year of engineering into a quarter, without compromise.
           </motion.p>
 
           <motion.div variants={fadeUp} className="mt-10 flex flex-wrap items-center justify-center gap-3">
@@ -132,28 +153,32 @@ export function Hero() {
                 </svg>
               }
             >
-              Watch the reel
+              Watch the reel · 2:14
             </AmberButton>
           </motion.div>
 
           <motion.div
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 1.6, duration: 1, ease: [0.16, 1, 0.3, 1] }}
-            className="mt-16 flex flex-col items-center gap-3"
+            transition={{ delay: 1.55, duration: 1, ease: [0.16, 1, 0.3, 1] }}
+            className="mt-14 flex flex-col items-center gap-4"
           >
             <p className="text-[11px] font-medium uppercase tracking-[0.22em] text-off-white/35">
-              Trusted by category leaders
+              Trusted by Africa’s category leaders
             </p>
-            <div className="flex items-center gap-6 text-off-white/45">
-              {['Stripe', 'Linear', 'Vercel', 'Ramp', 'Figma'].map((logo) => (
-                <span key={logo} className="font-serif text-base italic tracking-tight">
-                  {logo}
-                </span>
+            <div className="flex flex-wrap items-center justify-center gap-x-9 gap-y-4 text-off-white/45">
+              {heroPartners.map(({ name, Logo }) => (
+                <Logo
+                  key={name}
+                  className="h-5 w-auto opacity-60 transition-opacity duration-300 hover:opacity-100"
+                />
               ))}
             </div>
           </motion.div>
         </motion.div>
+
+        {/* Floating annotation cards */}
+        <FloatingAnnotations lagosTime={lagosTime} />
 
         {/* Floating 3D scene preview card */}
         <motion.div
@@ -171,9 +196,11 @@ export function Hero() {
               </div>
               <div className="flex items-center gap-2 rounded-full border border-white/5 bg-white/[0.02] px-3 py-1 text-[11px] font-mono text-off-white/45">
                 <span className="h-1.5 w-1.5 rounded-full bg-amber/80" />
-                hijaz.studio / canvas / production
+                hijaz.ng / canvas / production · LOS
               </div>
-              <div className="text-[11px] font-mono text-off-white/35">v4.0.21</div>
+              <div className="hidden font-mono text-[11px] text-off-white/35 md:block">
+                {lagosTime} GMT+1
+              </div>
             </div>
 
             <div className="relative grid grid-cols-1 lg:grid-cols-[1.1fr_1fr]">
@@ -211,10 +238,10 @@ export function Hero() {
 
                   <div className="grid grid-cols-2 gap-4">
                     {[
-                      { label: 'Velocity', value: '4.6×', sub: 'vs industry' },
+                      { label: 'Velocity', value: '4.6×', sub: 'vs incumbent' },
                       { label: 'Time-to-prod', value: '21d', sub: 'avg engagement' },
                       { label: 'Quality gate', value: '99.97%', sub: 'uptime SLA' },
-                      { label: 'NPS', value: '92', sub: 'client score' },
+                      { label: 'Settled / 24h', value: '₦18.4B', sub: 'across rails' },
                     ].map((m) => (
                       <div key={m.label} className="rounded-xl border border-white/5 bg-white/[0.02] p-3">
                         <p className="text-[10px] font-mono uppercase tracking-[0.18em] text-off-white/40">
@@ -259,7 +286,7 @@ export function Hero() {
                     </div>
                     <div>
                       <p className="text-xs text-off-white/85">Ship to production</p>
-                      <p className="text-[10px] text-off-white/40">Triggered by lead engineer</p>
+                      <p className="text-[10px] text-off-white/40">Lead engineer · Lagos pod 03</p>
                     </div>
                   </div>
                   <span className="font-mono text-[10px] text-off-white/40">⌘ + K</span>
@@ -270,6 +297,63 @@ export function Hero() {
 
           <div className="pointer-events-none absolute -inset-x-12 -inset-y-8 -z-10 rounded-[40px] bg-amber/10 blur-3xl" />
         </motion.div>
+
+        {/* Press row */}
+        <motion.div
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.2, duration: 1, ease: [0.16, 1, 0.3, 1] }}
+          className="relative mx-auto mt-20 max-w-6xl"
+        >
+          <div className="flex items-center gap-4 px-4">
+            <span className="text-[11px] font-medium uppercase tracking-[0.22em] text-off-white/35">
+              As featured in
+            </span>
+            <div className="h-px flex-1 bg-gradient-to-r from-white/10 to-transparent" />
+          </div>
+          <div className="mask-fade-x mt-5 overflow-hidden">
+            <div className="flex w-max animate-marquee items-center gap-12 px-4">
+              {[...press, ...press].map((p, i) => (
+                <div
+                  key={`${p.outlet}-${i}`}
+                  className="group flex shrink-0 items-center gap-3 text-off-white/45"
+                >
+                  <span className="font-serif text-xl italic tracking-tight text-off-white/70 transition-colors group-hover:text-off-white">
+                    {p.outlet}
+                  </span>
+                  <span className="hidden text-xs italic text-off-white/40 md:block">
+                    "{p.quote}"
+                  </span>
+                  <span className="hidden h-1 w-1 rounded-full bg-amber/40 md:block" />
+                </div>
+              ))}
+            </div>
+          </div>
+        </motion.div>
+
+        {/* Bottom hero meta band */}
+        <motion.div
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.4, duration: 1, ease: [0.16, 1, 0.3, 1] }}
+          className="relative mx-auto mt-16 grid max-w-6xl grid-cols-2 gap-px overflow-hidden rounded-2xl border border-white/8 bg-white/5 md:grid-cols-4"
+        >
+          {[
+            { kpi: '₦4.8T', label: 'Annualized payments routed' },
+            { kpi: '14', label: 'African markets live' },
+            { kpi: '42', label: 'Senior staff · Lagos' },
+            { kpi: '99.97%', label: 'Production uptime' },
+          ].map((item) => (
+            <div key={item.label} className="bg-charcoal/85 px-5 py-5">
+              <p className="font-serif text-2xl text-gradient-amber md:text-3xl">{item.kpi}</p>
+              <p className="mt-1 text-[10px] uppercase tracking-[0.2em] text-off-white/45">
+                {item.label}
+              </p>
+            </div>
+          ))}
+        </motion.div>
       </div>
 
       {/* Scroll cue */}
@@ -277,7 +361,7 @@ export function Hero() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 2.2, duration: 1 }}
-        className="absolute bottom-6 left-1/2 z-10 -translate-x-1/2"
+        className="relative z-10 mt-16 flex justify-center pb-8"
       >
         <div className="flex flex-col items-center gap-2 text-[10px] font-mono uppercase tracking-[0.22em] text-off-white/40">
           <span>Scroll</span>
@@ -291,5 +375,123 @@ export function Hero() {
         </div>
       </motion.div>
     </section>
+  );
+}
+
+function CornerBrackets() {
+  const corner = 'pointer-events-none absolute h-12 w-12 border-amber/40';
+  return (
+    <>
+      <div className={`${corner} left-6 top-24 border-l border-t md:left-10 md:top-28`} />
+      <div className={`${corner} right-6 top-24 border-r border-t md:right-10 md:top-28`} />
+      <div className={`${corner} bottom-6 left-6 border-b border-l md:left-10 md:bottom-10`} />
+      <div className={`${corner} bottom-6 right-6 border-b border-r md:right-10 md:bottom-10`} />
+    </>
+  );
+}
+
+function SideRail({ side, lagosTime }: { side: 'left' | 'right'; lagosTime?: string }) {
+  return (
+    <div
+      className={`pointer-events-none absolute top-1/2 hidden -translate-y-1/2 select-none flex-col items-center gap-3 text-[10px] font-mono uppercase tracking-[0.22em] text-off-white/35 lg:flex ${
+        side === 'left' ? 'left-6' : 'right-6'
+      }`}
+    >
+      <div className="h-12 w-px bg-gradient-to-b from-transparent via-amber/40 to-transparent" />
+      <div className="flex flex-col items-center gap-3" style={{ writingMode: 'vertical-rl' }}>
+        {side === 'left' ? (
+          <>
+            <span>est. 2014 · lagos</span>
+            <span className="text-amber/70">·</span>
+            <span>{lagosTime ? `lagos ${lagosTime}` : 'live · pod 03'}</span>
+          </>
+        ) : (
+          <>
+            <span>v4.0 · 0721</span>
+            <span className="text-amber/70">·</span>
+            <span>scroll for the reel</span>
+          </>
+        )}
+      </div>
+      <div className="h-12 w-px bg-gradient-to-b from-amber/40 via-amber/20 to-transparent" />
+    </div>
+  );
+}
+
+function FloatingAnnotations({ lagosTime }: { lagosTime: string }) {
+  return (
+    <>
+      <motion.div
+        initial={{ opacity: 0, y: 30, x: -20 }}
+        animate={{ opacity: 1, y: 0, x: 0 }}
+        transition={{ delay: 1.7, duration: 1, ease: [0.16, 1, 0.3, 1] }}
+        className="pointer-events-none absolute left-6 top-[42%] z-[5] hidden xl:block"
+      >
+        <FloatingCard
+          icon={
+            <span className="relative flex h-2 w-2">
+              <span className="absolute inset-0 animate-ping rounded-full bg-amber/60" />
+              <span className="relative h-2 w-2 rounded-full bg-amber" />
+            </span>
+          }
+          eyebrow="Lagos · Yaba HQ"
+          title={`${lagosTime}`}
+          sub="13 engineers online · pod 03 deploying"
+        />
+      </motion.div>
+
+      <motion.div
+        initial={{ opacity: 0, y: 30, x: 20 }}
+        animate={{ opacity: 1, y: 0, x: 0 }}
+        transition={{ delay: 1.85, duration: 1, ease: [0.16, 1, 0.3, 1] }}
+        className="pointer-events-none absolute right-6 top-[36%] z-[5] hidden xl:block"
+      >
+        <FloatingCard
+          icon={<span className="text-amber">↑</span>}
+          eyebrow="Last 24h · routed"
+          title="₦18.42B"
+          sub="across NIBSS, MTN, Flutterwave, Paystack"
+        />
+      </motion.div>
+
+      <motion.div
+        initial={{ opacity: 0, y: 30, x: 20 }}
+        animate={{ opacity: 1, y: 0, x: 0 }}
+        transition={{ delay: 2, duration: 1, ease: [0.16, 1, 0.3, 1] }}
+        className="pointer-events-none absolute right-6 top-[58%] z-[5] hidden xl:block"
+      >
+        <FloatingCard
+          icon={<span className="text-amber">★</span>}
+          eyebrow="Awwwards SOTD"
+          title="Lagos Mercantile"
+          sub="this week’s site of the day"
+        />
+      </motion.div>
+    </>
+  );
+}
+
+function FloatingCard({
+  icon,
+  eyebrow,
+  title,
+  sub,
+}: {
+  icon: React.ReactNode;
+  eyebrow: string;
+  title: string;
+  sub: string;
+}) {
+  return (
+    <div className="border-gradient relative w-56 overflow-hidden rounded-2xl bg-black/55 p-4 backdrop-blur-xl shadow-card">
+      <div className="flex items-center gap-2">
+        {icon}
+        <p className="font-mono text-[10px] uppercase tracking-[0.22em] text-off-white/45">
+          {eyebrow}
+        </p>
+      </div>
+      <p className="mt-2 font-serif text-2xl text-gradient-amber">{title}</p>
+      <p className="mt-1 text-[11px] leading-snug text-off-white/55">{sub}</p>
+    </div>
   );
 }

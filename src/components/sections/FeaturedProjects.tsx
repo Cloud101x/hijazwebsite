@@ -2,84 +2,7 @@ import { motion, useScroll, useTransform } from 'framer-motion';
 import { useRef } from 'react';
 import { SectionHeading } from '../ui/SectionHeading';
 import { GlowOrb } from '../ui/GlowOrb';
-
-interface Project {
-  index: string;
-  client: string;
-  category: string;
-  title: string;
-  description: string;
-  year: string;
-  award?: string;
-  metric: { label: string; value: string };
-  scenes: { tag: string; tone: 'amber' | 'graphite' | 'mixed' }[];
-}
-
-const projects: Project[] = [
-  {
-    index: '01',
-    client: 'Helios Capital',
-    category: 'Fintech / Trading',
-    title: 'Realtime portfolio surface for institutional traders',
-    description:
-      'Sub-30ms streaming visualizations powering a $48B AUM trading desk. Built on a custom WebGL canvas and an event-sourced ledger.',
-    year: '2025',
-    award: 'Awwwards SOTD',
-    metric: { label: 'Latency P99', value: '24ms' },
-    scenes: [
-      { tag: 'Trading canvas', tone: 'amber' },
-      { tag: 'Ledger graph', tone: 'mixed' },
-      { tag: 'Risk panel', tone: 'graphite' },
-    ],
-  },
-  {
-    index: '02',
-    client: 'Nimbus AI',
-    category: 'AI / Developer tools',
-    title: 'Agentic IDE that ships production code',
-    description:
-      'A native macOS IDE with multi-agent orchestration, semantic indexing, and a generative shell. Now used by 40k engineers.',
-    year: '2025',
-    award: 'CSS Design Awards',
-    metric: { label: 'Active devs', value: '40k+' },
-    scenes: [
-      { tag: 'Agent shell', tone: 'graphite' },
-      { tag: 'Semantic index', tone: 'amber' },
-      { tag: 'Code canvas', tone: 'mixed' },
-    ],
-  },
-  {
-    index: '03',
-    client: 'Volta Mobility',
-    category: 'Climate / Hardware',
-    title: 'OS for Europe’s largest EV charging network',
-    description:
-      'Driver app, dispatcher console, and hardware OS — orchestrating 120k chargers across 14 markets with 99.97% uptime.',
-    year: '2024',
-    metric: { label: 'Uptime', value: '99.97%' },
-    scenes: [
-      { tag: 'Driver app', tone: 'mixed' },
-      { tag: 'Fleet map', tone: 'amber' },
-      { tag: 'Hardware OS', tone: 'graphite' },
-    ],
-  },
-  {
-    index: '04',
-    client: 'Atlas Health',
-    category: 'Healthcare / Enterprise',
-    title: 'Clinical intelligence platform for 200+ hospitals',
-    description:
-      'HIPAA-compliant data fabric and a beautifully fast clinician interface. Processes 18M patient events daily.',
-    year: '2024',
-    award: 'Webby Award',
-    metric: { label: 'Events/day', value: '18M' },
-    scenes: [
-      { tag: 'Clinician console', tone: 'graphite' },
-      { tag: 'Patient timeline', tone: 'amber' },
-      { tag: 'Data fabric', tone: 'mixed' },
-    ],
-  },
-];
+import { projects, type Project } from '../../data/projects';
 
 export function FeaturedProjects() {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -177,6 +100,17 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
 
             <p className="text-sm leading-relaxed text-off-white/55">{project.description}</p>
 
+            <div className="flex flex-wrap gap-1.5">
+              {project.tags.map((t) => (
+                <span
+                  key={t}
+                  className="rounded-full border border-white/8 bg-white/[0.02] px-2.5 py-1 text-[11px] text-off-white/65"
+                >
+                  {t}
+                </span>
+              ))}
+            </div>
+
             <div className="mt-2 flex items-center justify-between border-t border-white/5 pt-5">
               <div>
                 <p className="text-[10px] font-mono uppercase tracking-[0.2em] text-off-white/35">
@@ -202,7 +136,7 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
           <div className="relative">
             <div className="grid grid-cols-3 gap-2.5">
               {project.scenes.map((scene, i) => (
-                <ProjectScene key={scene.tag} tone={scene.tone} tag={scene.tag} delay={i * 0.1} />
+                <ProjectScene key={scene.tag} tag={scene.tag} image={scene.image} delay={i * 0.1} primary={i === 0} />
               ))}
             </div>
           </div>
@@ -213,74 +147,43 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
 }
 
 function ProjectScene({
-  tone,
   tag,
+  image,
   delay,
+  primary,
 }: {
-  tone: 'amber' | 'graphite' | 'mixed';
   tag: string;
+  image: string;
   delay: number;
+  primary?: boolean;
 }) {
-  const bg =
-    tone === 'amber'
-      ? 'bg-gradient-to-br from-ember/30 via-amber/10 to-black'
-      : tone === 'mixed'
-        ? 'bg-gradient-to-br from-amber/20 via-graphite to-black'
-        : 'bg-gradient-to-br from-graphite via-charcoal to-black';
-
   return (
     <motion.div
       initial={{ opacity: 0, scale: 0.9, y: 20 }}
       whileInView={{ opacity: 1, scale: 1, y: 0 }}
       viewport={{ once: true, margin: '-40px' }}
       transition={{ duration: 0.9, delay, ease: [0.16, 1, 0.3, 1] }}
-      className={`group/scene relative aspect-[3/4] overflow-hidden rounded-xl border border-white/8 ${bg}`}
+      className="group/scene relative aspect-[3/4] overflow-hidden rounded-xl border border-white/8 bg-graphite"
     >
-      <div className="absolute inset-0 grid-bg opacity-40" />
-      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent" />
+      <img
+        src={image}
+        alt={tag}
+        loading="lazy"
+        decoding="async"
+        className="absolute inset-0 h-full w-full object-cover opacity-75 grayscale-[20%] transition-all duration-700 group-hover/scene:scale-[1.06] group-hover/scene:opacity-100 group-hover/scene:grayscale-0"
+      />
+      <div className="absolute inset-0 bg-gradient-to-br from-charcoal/40 via-transparent to-amber/10 mix-blend-overlay" />
+      <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent opacity-90" />
 
-      {tone === 'amber' && (
-        <div className="absolute inset-0 flex items-center justify-center">
-          <div className="h-24 w-24 rounded-full bg-ember-glow" />
-          <div className="absolute h-12 w-12 rounded-full bg-amber shadow-ember-lg" />
-        </div>
+      {primary && (
+        <span className="absolute left-3 top-3 rounded-full border border-amber/30 bg-black/40 px-2 py-0.5 text-[9px] font-medium uppercase tracking-[0.2em] text-flame backdrop-blur-md">
+          Hero
+        </span>
       )}
 
-      {tone === 'graphite' && (
-        <div className="absolute inset-4 flex flex-col gap-1.5">
-          {Array.from({ length: 6 }).map((_, i) => (
-            <div
-              key={i}
-              className="h-1 rounded-full bg-white/10"
-              style={{ width: `${30 + Math.sin(i * 1.7) * 30 + 30}%` }}
-            />
-          ))}
-          <div className="mt-auto flex items-end gap-1">
-            {Array.from({ length: 7 }).map((_, i) => (
-              <div
-                key={i}
-                className="w-2 rounded-sm bg-amber/40"
-                style={{ height: `${15 + Math.sin(i * 1.3) * 18 + 18}px` }}
-              />
-            ))}
-          </div>
-        </div>
-      )}
-
-      {tone === 'mixed' && (
-        <div className="absolute inset-0 flex items-center justify-center">
-          <div className="relative h-32 w-32">
-            <div className="absolute inset-0 rounded-full border border-amber/40" />
-            <div className="absolute inset-2 rounded-full border border-amber/20" />
-            <div className="absolute inset-4 rounded-full border border-amber/10" />
-            <div className="absolute left-1/2 top-1/2 h-2 w-2 -translate-x-1/2 -translate-y-1/2 rounded-full bg-amber shadow-ember-sm" />
-          </div>
-        </div>
-      )}
-
-      <div className="absolute bottom-3 left-3 right-3 flex items-center justify-between text-[10px] font-mono uppercase tracking-[0.18em] text-off-white/55">
+      <div className="absolute bottom-3 left-3 right-3 flex items-center justify-between text-[10px] font-mono uppercase tracking-[0.18em] text-off-white/70">
         <span>{tag}</span>
-        <span className="text-amber/70">●</span>
+        <span className="text-amber/80">●</span>
       </div>
     </motion.div>
   );

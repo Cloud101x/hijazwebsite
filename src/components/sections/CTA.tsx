@@ -54,7 +54,7 @@ export function CTA() {
                     Start a project
                   </AmberButton>
                   <AmberButton variant="ghost">
-                    hello@hijaz.studio
+                    hello@hijaz.ng
                   </AmberButton>
                 </div>
 
@@ -82,9 +82,9 @@ export function CTA() {
 
                   <div className="mt-5 space-y-4">
                     {[
-                      { label: 'Name', value: 'Eleanor Vance' },
-                      { label: 'Company', value: 'Helios Capital' },
-                      { label: 'Email', value: 'eleanor@helios.fi' },
+                      { label: 'Name', value: 'Adaeze Okonkwo' },
+                      { label: 'Company', value: 'Lagos Mercantile Bank' },
+                      { label: 'Email', value: 'adaeze@lmb.ng' },
                     ].map((field) => (
                       <div key={field.label}>
                         <p className="text-[10px] uppercase tracking-[0.2em] text-off-white/35">
@@ -100,7 +100,7 @@ export function CTA() {
                         What are we shipping?
                       </p>
                       <div className="mt-1.5 rounded-xl border border-white/8 bg-white/[0.03] px-4 py-3 text-sm text-off-white/70">
-                        Realtime portfolio surface for institutional traders. Sub-30ms streaming…
+                        Settlement engine for cross-border NGN ↔ USD payments. Sub-200ms across…
                       </div>
                     </div>
                   </div>

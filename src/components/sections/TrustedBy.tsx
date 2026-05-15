@@ -1,19 +1,5 @@
 import { motion } from 'framer-motion';
-
-const partners = [
-  'STRIPE',
-  'LINEAR',
-  'VERCEL',
-  'RAMP',
-  'FIGMA',
-  'NOTION',
-  'ARC',
-  'RAYCAST',
-  'CURSOR',
-  'SCALE',
-  'PERPLEXITY',
-  'MIDJOURNEY',
-];
+import { partners } from '../../data/partners';
 
 export function TrustedBy() {
   return (
@@ -29,23 +15,21 @@ export function TrustedBy() {
           Built alongside teams shaping the future of software
         </motion.p>
 
-        <div className="relative mt-10 mask-fade-x">
-          <div className="flex w-max animate-marquee items-center gap-16">
-            {[...partners, ...partners].map((p, i) => (
+        <div className="relative mt-12 mask-fade-x">
+          <div className="flex w-max animate-marquee items-center gap-14">
+            {[...partners, ...partners].map(({ name, Logo }, i) => (
               <div
-                key={`${p}-${i}`}
-                className="group flex items-center gap-3 transition-all duration-500 hover:text-off-white"
+                key={`${name}-${i}`}
+                className="group flex shrink-0 items-center transition-all duration-500"
+                title={name}
               >
-                <span className="h-1.5 w-1.5 rounded-full bg-off-white/15 group-hover:bg-amber group-hover:shadow-ember-sm" />
-                <span className="font-serif text-2xl italic tracking-tight text-off-white/40 transition-colors duration-300 group-hover:text-off-white/95">
-                  {p}
-                </span>
+                <Logo className="h-6 w-auto text-off-white/40 transition-all duration-500 group-hover:text-off-white group-hover:drop-shadow-[0_0_12px_rgba(255,140,66,0.4)]" />
               </div>
             ))}
           </div>
         </div>
 
-        <div className="mt-14 grid grid-cols-2 gap-px overflow-hidden rounded-2xl border border-white/5 bg-white/5 sm:grid-cols-4">
+        <div className="mt-16 grid grid-cols-2 gap-px overflow-hidden rounded-2xl border border-white/5 bg-white/5 sm:grid-cols-4">
           {[
             { kpi: '2.4B+', label: 'Requests served' },
             { kpi: '180+', label: 'Engagements shipped' },

@@ -1,59 +1,7 @@
 import { motion } from 'framer-motion';
 import { SectionHeading } from '../ui/SectionHeading';
 import { GlowOrb } from '../ui/GlowOrb';
-
-interface Testimonial {
-  quote: string;
-  name: string;
-  role: string;
-  company: string;
-  initials: string;
-  highlight?: boolean;
-}
-
-const testimonials: Testimonial[] = [
-  {
-    quote:
-      "Hijaz rebuilt our trading surface in eleven weeks. The team that took us six months to assemble couldn't have done it in a year. We now treat them as a permanent senior pod.",
-    name: 'Eleanor Vance',
-    role: 'Chief Technology Officer',
-    company: 'Helios Capital',
-    initials: 'EV',
-    highlight: true,
-  },
-  {
-    quote:
-      "The most senior engineering team I've ever worked with — and I've shipped at three unicorns. They have opinions, they're right, and they move.",
-    name: 'Marcus Okafor',
-    role: 'VP Engineering',
-    company: 'Nimbus AI',
-    initials: 'MO',
-  },
-  {
-    quote:
-      "We hired Hijaz to design one screen. They quietly redesigned our entire product narrative in the same sprint. Conversion is up 38%.",
-    name: 'Sofia Lindqvist',
-    role: 'Co-founder',
-    company: 'Volta Mobility',
-    initials: 'SL',
-  },
-  {
-    quote:
-      "Awwwards-grade craft, FAANG-grade engineering. I do not know how they do both. The work is, simply, the best in the field right now.",
-    name: 'Dr. Ravi Krishnan',
-    role: 'Chief Product Officer',
-    company: 'Atlas Health',
-    initials: 'RK',
-  },
-  {
-    quote:
-      'Their architecture review saved us a four-month rewrite. Twenty pages of writing that paid for the engagement five times over.',
-    name: 'Hannah Müller',
-    role: 'Head of Platform',
-    company: 'Mercury OS',
-    initials: 'HM',
-  },
-];
+import { testimonials } from '../../data/testimonials';
 
 export function Testimonials() {
   return (
@@ -116,8 +64,15 @@ export function Testimonials() {
               </blockquote>
 
               <figcaption className="relative mt-7 flex items-center gap-4 border-t border-white/5 pt-5">
-                <div className="grid h-11 w-11 place-items-center rounded-full bg-gradient-to-br from-amber to-ember text-sm font-medium text-off-white shadow-ember-sm">
-                  {t.initials}
+                <div className="relative h-11 w-11 shrink-0 overflow-hidden rounded-full ring-1 ring-amber/30 ring-offset-2 ring-offset-charcoal">
+                  <img
+                    src={t.avatar}
+                    alt={t.name}
+                    loading="lazy"
+                    decoding="async"
+                    className="absolute inset-0 h-full w-full object-cover"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-br from-amber/10 via-transparent to-transparent mix-blend-overlay" />
                 </div>
                 <div>
                   <p className="text-sm font-medium text-off-white">{t.name}</p>
@@ -136,13 +91,6 @@ export function Testimonials() {
 
 function gridSpan(i: number, highlight?: boolean): string {
   if (highlight) return 'md:col-span-3 md:row-span-2';
-  const map = [
-    '',
-    'md:col-span-3',
-    'md:col-span-3',
-    'md:col-span-3',
-    'md:col-span-3',
-    'md:col-span-3',
-  ];
+  const map = ['', 'md:col-span-3', 'md:col-span-3', 'md:col-span-3', 'md:col-span-3', 'md:col-span-3'];
   return map[i] ?? 'md:col-span-3';
 }

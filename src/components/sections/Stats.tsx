@@ -16,9 +16,9 @@ const stats: Stat[] = [
   { value: 4.6, suffix: '×', label: 'Velocity multiplier', description: 'measured against incumbent agency baselines', decimals: 1 },
   { value: 99.97, suffix: '%', label: 'Production uptime', description: 'across all systems we currently operate', decimals: 2 },
   { value: 21, suffix: 'd', label: 'Avg. time-to-prod', description: 'from kickoff to first revenue-generating release' },
-  { value: 92, label: 'Client NPS', description: 'over the last 36 months of engagements' },
-  { value: 180, suffix: '+', label: 'Engagements shipped', description: 'across fintech, AI, climate, healthcare' },
-  { value: 2.4, prefix: '$', suffix: 'B', label: 'AUM under our software', description: 'platforms we built or operate today', decimals: 1 },
+  { value: 14, label: 'African markets live', description: 'NG, GH, KE, ZA, EG, RW, CI, SN, TZ, UG and more' },
+  { value: 180, suffix: '+', label: 'Engagements shipped', description: 'across fintech, AI, mobility, healthcare' },
+  { value: 4.8, prefix: '₦', suffix: 'T', label: 'Annualized payments', description: 'flowing through software we built or operate', decimals: 1 },
 ];
 
 function CountUp({ to, decimals = 0 }: { to: number; decimals?: number }) {
