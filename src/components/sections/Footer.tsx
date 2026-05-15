@@ -21,28 +21,28 @@ const footerNav = [
 
 export function Footer() {
   return (
-    <footer className="relative overflow-hidden border-t border-white/5 pt-24">
+    <footer className="relative overflow-hidden border-t border-[var(--border-subtle)] pt-16 sm:pt-24">
       <div className="container-custom relative">
-        <div className="grid grid-cols-1 gap-16 lg:grid-cols-[1.4fr_2fr]">
+        <div className="grid grid-cols-1 gap-12 lg:gap-16 lg:grid-cols-[1.4fr_2fr]">
           <div>
             <a href="#top" className="flex items-center gap-3">
               <span className="relative grid h-10 w-10 place-items-center rounded-xl bg-gradient-to-br from-amber via-ember to-[#7a2f00] shadow-ember-md">
                 <span className="absolute inset-0 rounded-xl bg-gradient-to-br from-white/30 to-transparent opacity-50" />
-                <svg viewBox="0 0 20 20" className="relative h-5 w-5 text-off-white" fill="none">
+                <svg viewBox="0 0 20 20" className="relative h-5 w-5 text-[var(--text-primary)]" fill="none">
                   <path d="M3 17V3h2.5v6.2L13 3h3.2L9.8 8 17 17h-3.4L8 10.5 5.5 12.5V17H3z" fill="currentColor" />
                 </svg>
               </span>
-              <span className="font-serif text-2xl italic tracking-tight text-off-white">
-                Hijaz<span className="text-amber">.</span>studio
+              <span className="font-serif text-2xl italic tracking-tight text-[var(--text-primary)]">
+                Hijaz<span className="text-[var(--accent)]">.</span>studio
               </span>
             </a>
 
-            <p className="mt-6 max-w-md text-sm leading-relaxed text-off-white/55">
+            <p className="mt-6 max-w-md text-sm leading-relaxed text-[var(--text-secondary)]">
               An elite product engineering studio out of Abuja, architecting category-defining
               software for Africa's most ambitious teams — and the world's. Established 2014.
             </p>
 
-            <address className="mt-4 text-sm not-italic text-off-white/35">
+            <address className="mt-4 text-sm not-italic text-[var(--text-tertiary)]">
               14 Ronald Nyere Street, Central Business District<br />
               Abuja, FCT 900211, Nigeria
             </address>
@@ -58,7 +58,7 @@ export function Footer() {
                   key={s.label}
                   href="#"
                   aria-label={s.label}
-                  className="grid h-10 w-10 place-items-center rounded-full border border-white/10 bg-white/[0.03] text-off-white/65 transition-all duration-300 hover:border-amber/40 hover:bg-amber/5 hover:text-amber"
+                  className="grid h-10 w-10 place-items-center rounded-full border border-[var(--border-subtle)] bg-[var(--surface-glass)] text-[var(--text-primary)] transition-all duration-300 hover:border-amber/40 hover:bg-[var(--accent)]/5 hover:text-[var(--accent)]"
                 >
                   <svg viewBox="0 0 20 20" className="h-4 w-4">
                     {s.icon}
@@ -67,7 +67,7 @@ export function Footer() {
               ))}
             </div>
 
-            <div className="mt-10 inline-flex items-center gap-3 rounded-full border border-white/8 bg-white/[0.02] px-4 py-2 text-xs text-off-white/55">
+            <div className="mt-10 inline-flex items-center gap-3 rounded-full border border-[var(--border-subtle)] bg-[var(--surface-glass)] px-4 py-2 text-xs text-[var(--text-secondary)]">
               <span className="relative flex h-1.5 w-1.5">
                 <span className="absolute inset-0 animate-ping rounded-full bg-emerald-400/60" />
                 <span className="relative h-1.5 w-1.5 rounded-full bg-emerald-400" />
@@ -76,7 +76,7 @@ export function Footer() {
             </div>
           </div>
 
-          <div className="grid grid-cols-2 gap-10 sm:grid-cols-4">
+          <div className="grid grid-cols-2 gap-8 sm:grid-cols-4 sm:gap-10">
             {footerNav.map((col, i) => (
               <motion.div
                 key={col.label}
@@ -85,7 +85,7 @@ export function Footer() {
                 viewport={{ once: true, margin: '-40px' }}
                 transition={{ duration: 0.7, delay: i * 0.06, ease: [0.16, 1, 0.3, 1] }}
               >
-                <p className="text-[11px] font-medium uppercase tracking-[0.22em] text-off-white/40">
+                <p className="text-[11px] font-medium uppercase tracking-[0.22em] text-[var(--text-tertiary)]">
                   {col.label}
                 </p>
                 <ul className="mt-5 space-y-3">
@@ -93,7 +93,7 @@ export function Footer() {
                     <li key={link}>
                       <a
                         href="#"
-                        className="group inline-flex items-center gap-1.5 text-sm text-off-white/70 transition-colors hover:text-amber"
+                        className="group inline-flex items-center gap-1.5 text-sm text-[var(--text-primary)] transition-colors hover:text-[var(--accent)]"
                       >
                         {link}
                         <svg
@@ -114,23 +114,23 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="mt-20 border-t border-white/5 py-8">
-          <div className="flex flex-col items-start justify-between gap-5 text-xs text-off-white/40 md:flex-row md:items-center">
+        <div className="mt-16 border-t border-[var(--border-subtle)] py-8 sm:mt-20">
+          <div className="flex flex-col items-start justify-between gap-5 text-xs text-[var(--text-tertiary)] md:flex-row md:items-center">
             <p>© 2025 Hijaz Studio Ltd. RC 1948302 · Engineered in Abuja with quiet obsession.</p>
             <div className="flex flex-wrap items-center gap-x-6 gap-y-2">
-              <a href="#" className="transition-colors hover:text-off-white">
+              <a href="#" className="transition-colors hover:text-[var(--text-primary)]">
                 Privacy
               </a>
-              <a href="#" className="transition-colors hover:text-off-white">
+              <a href="#" className="transition-colors hover:text-[var(--text-primary)]">
                 Terms
               </a>
-              <a href="#" className="transition-colors hover:text-off-white">
+              <a href="#" className="transition-colors hover:text-[var(--text-primary)]">
                 Security
               </a>
-              <a href="#" className="transition-colors hover:text-off-white">
+              <a href="#" className="transition-colors hover:text-[var(--text-primary)]">
                 Cookies
               </a>
-              <span className="font-mono text-off-white/35">v4.0.21 · {new Date().getFullYear()}</span>
+              <span className="font-mono text-[var(--text-tertiary)]">v4.0.21 · {new Date().getFullYear()}</span>
             </div>
           </div>
         </div>
@@ -141,7 +141,7 @@ export function Footer() {
           className="pointer-events-none relative -mt-4 select-none overflow-hidden mask-fade-b"
         >
           <h3 className="whitespace-nowrap text-center font-serif text-[24vw] font-normal italic leading-[0.85] text-gradient-amber opacity-40">
-            hijaz<span className="text-amber">.</span>
+            hijaz<span className="text-[var(--accent)]">.</span>
           </h3>
         </div>
       </div>

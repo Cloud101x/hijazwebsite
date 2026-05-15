@@ -72,14 +72,14 @@ export function Process() {
           title={
             <>
               Eleven weeks from <br />
-              <span className="font-serif italic text-amber">whiteboard</span> to global launch.
+              <span className="font-serif italic text-[var(--accent)]">whiteboard</span> to global launch.
             </>
           }
           description="A repeatable cadence we've refined over 180+ engagements. Predictable enough to plan around, opinionated enough to be ours."
         />
 
         <div ref={containerRef} className="relative mt-20">
-          <div className="absolute left-7 top-0 hidden h-full w-px bg-white/8 md:block">
+          <div className="absolute left-7 top-0 hidden h-full w-px bg-[var(--border-subtle)] md:block">
             <motion.span
               style={{ height: railFill }}
               className="absolute inset-x-0 top-0 w-px bg-gradient-to-b from-amber via-ember to-transparent shadow-[0_0_18px_rgba(255,106,0,0.55)]"
@@ -102,31 +102,31 @@ export function Process() {
                   </div>
                 </div>
 
-                <div className="border-gradient relative overflow-hidden rounded-3xl bg-charcoal/65 p-6 backdrop-blur-xl shadow-card transition-all duration-500 hover:bg-charcoal/85 md:p-8">
+                <div className="border-gradient relative overflow-hidden rounded-3xl bg-[var(--card-bg)] p-6 backdrop-blur-xl shadow-card transition-all duration-500 hover:bg-[var(--card-bg-hover)] md:p-8">
                   <div className="grid grid-cols-1 gap-6 md:grid-cols-[140px_1fr_auto] md:items-start">
                     <div>
                       <p className="font-serif text-5xl text-gradient-amber">{step.index}</p>
-                      <p className="mt-1 font-mono text-[11px] uppercase tracking-[0.22em] text-off-white/45">
+                      <p className="mt-1 font-mono text-[11px] uppercase tracking-[0.22em] text-[var(--text-tertiary)]">
                         {step.duration}
                       </p>
                     </div>
                     <div>
-                      <h3 className="text-2xl font-medium text-off-white md:text-[1.75rem]">
+                      <h3 className="text-2xl font-medium text-[var(--text-primary)] md:text-[1.75rem]">
                         {step.title}
                       </h3>
-                      <p className="mt-3 max-w-2xl text-sm leading-relaxed text-off-white/60">
+                      <p className="mt-3 max-w-2xl text-sm leading-relaxed text-[var(--text-secondary)]">
                         {step.description}
                       </p>
                     </div>
                     <div className="flex flex-col gap-1.5 md:items-end">
-                      <p className="font-mono text-[10px] uppercase tracking-[0.2em] text-off-white/40">
+                      <p className="font-mono text-[10px] uppercase tracking-[0.2em] text-[var(--text-tertiary)]">
                         Artifacts
                       </p>
                       <div className="flex flex-wrap gap-1.5 md:justify-end">
                         {step.artifacts.map((a) => (
                           <span
                             key={a}
-                            className="rounded-full border border-white/8 bg-white/[0.03] px-2.5 py-1 text-[11px] text-off-white/65"
+                            className="rounded-full border border-[var(--border-subtle)] bg-[var(--surface-glass)] px-2.5 py-1 text-[11px] text-[var(--text-primary)]"
                           >
                             {a}
                           </span>

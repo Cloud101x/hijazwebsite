@@ -30,7 +30,7 @@ export function SectionHeading({
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: '-80px' }}
           transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-          className="text-[11px] font-medium uppercase tracking-[0.22em] text-amber/80"
+          className="text-[11px] font-medium uppercase tracking-[0.22em] text-[var(--accent)]"
         >
           {eyebrow}
         </motion.span>
@@ -51,12 +51,10 @@ export function SectionHeading({
           viewport={{ once: true, margin: '-80px' }}
           transition={{ duration: 0.85, delay: 0.15, ease: [0.16, 1, 0.3, 1] }}
           className={cn(
-            'max-w-2xl text-base leading-relaxed text-off-white/55 md:text-lg',
+            'max-w-2xl text-base leading-relaxed text-[var(--text-secondary)] md:text-lg',
             align === 'center' ? 'mx-auto' : '',
           )}
-        >
-          {description}
-        </motion.p>
+        />
       )}
     </div>
   );

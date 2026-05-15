@@ -25,7 +25,7 @@ export function FeaturedProjects() {
             title={
               <>
                 Products that have <br />
-                <span className="font-serif italic text-amber">defined categories.</span>
+                <span className="font-serif italic text-[var(--accent)]">defined categories.</span>
               </>
             }
             description="Each engagement compounds. We pick a small number of partners per quarter and ship the work the industry talks about."
@@ -33,7 +33,7 @@ export function FeaturedProjects() {
           <div className="flex md:justify-end">
             <a
               href="#all-work"
-              className="group inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.03] px-5 py-3 text-sm text-off-white/85 backdrop-blur-md transition-all duration-300 hover:border-amber/40"
+              className="group inline-flex items-center gap-2 rounded-full border border-[var(--border-subtle)] bg-[var(--surface-glass)] px-5 py-3 text-sm text-[var(--text-primary)] backdrop-blur-md transition-all duration-300 hover:border-amber/40"
             >
               View full archive
               <svg className="h-3.5 w-3.5 transition-transform duration-300 group-hover:translate-x-0.5" viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="2">
@@ -44,7 +44,7 @@ export function FeaturedProjects() {
         </div>
 
         <div ref={containerRef} className="relative mt-20">
-          <div className="absolute left-4 top-0 hidden h-full w-px bg-white/5 md:block">
+          <div className="absolute left-4 top-0 hidden h-full w-px bg-[var(--border-subtle)] md:block">
             <motion.div
               style={{ height: lineHeight }}
               className="absolute inset-x-0 top-0 w-px bg-gradient-to-b from-amber via-ember to-transparent"
@@ -76,53 +76,53 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
         <span className="absolute inset-[3px] rounded-full bg-amber shadow-ember-sm" />
       </div>
 
-      <div className="border-gradient relative overflow-hidden rounded-3xl bg-charcoal/70 p-6 backdrop-blur-xl shadow-card transition-all duration-700 hover:bg-charcoal/95 md:p-8">
+      <div className="border-gradient relative overflow-hidden rounded-3xl bg-[var(--card-bg)] p-6 backdrop-blur-xl shadow-card transition-all duration-700 hover:bg-[var(--card-bg-hover)] md:p-8">
         <div className="grid grid-cols-1 gap-8 lg:grid-cols-[1fr_1.15fr]">
           <div className="flex flex-col gap-5">
             <div className="flex flex-wrap items-center gap-3">
-              <span className="font-mono text-[11px] uppercase tracking-[0.2em] text-off-white/35">
+              <span className="font-mono text-[11px] uppercase tracking-[0.2em] text-[var(--text-tertiary)]">
                 {project.index} — {project.client}
               </span>
               <span className="h-3 w-px bg-white/15" />
-              <span className="text-[11px] uppercase tracking-[0.18em] text-off-white/45">
+              <span className="text-[11px] uppercase tracking-[0.18em] text-[var(--text-tertiary)]">
                 {project.category}
               </span>
               {project.award && (
-                <span className="rounded-full border border-amber/30 bg-amber/10 px-2.5 py-0.5 text-[10px] font-medium uppercase tracking-[0.18em] text-flame">
+                <span className="rounded-full border border-amber/30 bg-[var(--accent)]/10 px-2.5 py-0.5 text-[10px] font-medium uppercase tracking-[0.18em] text-flame">
                   {project.award}
                 </span>
               )}
             </div>
 
-            <h3 className="text-2xl font-medium leading-tight text-off-white md:text-3xl">
+            <h3 className="text-2xl font-medium leading-tight text-[var(--text-primary)] md:text-3xl">
               {project.title}
             </h3>
 
-            <p className="text-sm leading-relaxed text-off-white/55">{project.description}</p>
+            <p className="text-sm leading-relaxed text-[var(--text-secondary)]">{project.description}</p>
 
             <div className="flex flex-wrap gap-1.5">
               {project.tags.map((t) => (
                 <span
                   key={t}
-                  className="rounded-full border border-white/8 bg-white/[0.02] px-2.5 py-1 text-[11px] text-off-white/65"
+                  className="rounded-full border border-[var(--border-subtle)] bg-[var(--surface-glass)] px-2.5 py-1 text-[11px] text-[var(--text-primary)]"
                 >
                   {t}
                 </span>
               ))}
             </div>
 
-            <div className="mt-2 flex items-center justify-between border-t border-white/5 pt-5">
+            <div className="mt-2 flex items-center justify-between border-t border-[var(--border-subtle)] pt-5">
               <div>
-                <p className="text-[10px] font-mono uppercase tracking-[0.2em] text-off-white/35">
+                <p className="text-[10px] font-mono uppercase tracking-[0.2em] text-[var(--text-tertiary)]">
                   {project.metric.label}
                 </p>
                 <p className="font-serif text-2xl text-gradient-amber">{project.metric.value}</p>
               </div>
               <div className="flex items-center gap-3">
-                <span className="font-mono text-[11px] text-off-white/40">{project.year}</span>
+                <span className="font-mono text-[11px] text-[var(--text-tertiary)]">{project.year}</span>
                 <a
                   href="#case-study"
-                  className="grid h-10 w-10 place-items-center rounded-full border border-white/10 bg-white/[0.03] text-off-white/70 transition-all duration-300 hover:border-amber/50 hover:bg-amber/10 hover:text-amber"
+                  className="grid h-10 w-10 place-items-center rounded-full border border-[var(--border-subtle)] bg-[var(--surface-glass)] text-[var(--text-primary)] transition-all duration-300 hover:border-amber/50 hover:bg-[var(--accent)]/10 hover:text-[var(--accent)]"
                   aria-label="Open case study"
                 >
                   <svg className="h-3.5 w-3.5" viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="2">
@@ -163,7 +163,7 @@ function ProjectScene({
       whileInView={{ opacity: 1, scale: 1, y: 0 }}
       viewport={{ once: true, margin: '-40px' }}
       transition={{ duration: 0.9, delay, ease: [0.16, 1, 0.3, 1] }}
-      className="group/scene relative aspect-[3/4] overflow-hidden rounded-xl border border-white/8 bg-graphite"
+      className="group/scene relative aspect-[3/4] overflow-hidden rounded-xl border border-[var(--border-subtle)] bg-[var(--bg-surface-alt)]"
     >
       <img
         src={image}
@@ -172,18 +172,18 @@ function ProjectScene({
         decoding="async"
         className="absolute inset-0 h-full w-full object-cover opacity-75 grayscale-[20%] transition-all duration-700 group-hover/scene:scale-[1.06] group-hover/scene:opacity-100 group-hover/scene:grayscale-0"
       />
-      <div className="absolute inset-0 bg-gradient-to-br from-charcoal/40 via-transparent to-amber/10 mix-blend-overlay" />
+      <div className="absolute inset-0 bg-gradient-to-br from-[var(--bg-surface)] via-transparent to-amber/10 mix-blend-overlay" />
       <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent opacity-90" />
 
       {primary && (
-        <span className="absolute left-3 top-3 rounded-full border border-amber/30 bg-black/40 px-2 py-0.5 text-[9px] font-medium uppercase tracking-[0.2em] text-flame backdrop-blur-md">
+        <span className="absolute left-3 top-3 rounded-full border border-amber/30 bg-[var(--overlay-bg)] px-2 py-0.5 text-[9px] font-medium uppercase tracking-[0.2em] text-flame backdrop-blur-md">
           Hero
         </span>
       )}
 
-      <div className="absolute bottom-3 left-3 right-3 flex items-center justify-between text-[10px] font-mono uppercase tracking-[0.18em] text-off-white/70">
+      <div className="absolute bottom-3 left-3 right-3 flex items-center justify-between text-[10px] font-mono uppercase tracking-[0.18em] text-[var(--text-primary)]">
         <span>{tag}</span>
-        <span className="text-amber/80">●</span>
+        <span className="text-[var(--accent)]">●</span>
       </div>
     </motion.div>
   );

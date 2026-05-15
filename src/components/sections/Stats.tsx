@@ -45,7 +45,7 @@ export function Stats() {
   return (
     <section className="relative overflow-hidden py-28 md:py-36">
       <GlowOrb className="left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2" size={1100} color="amber" intensity="soft" />
-      <div className="absolute inset-0 -z-10 grid-bg opacity-30" />
+      <div className="absolute inset-0 -z-10 grid-db opacity-30" />
 
       <div className="container-custom relative">
         <SectionHeading
@@ -53,33 +53,33 @@ export function Stats() {
           title={
             <>
               Outcomes are the only <br />
-              <span className="font-serif italic text-amber">brand</span> that matters.
+              <span className="font-serif italic text-[var(--accent)]">brand</span> that matters.
             </>
           }
           description="Selected metrics from across our active portfolio. Each one is a contractually verifiable outcome — not a marketing line."
         />
 
-        <div className="mt-20 grid grid-cols-1 gap-px overflow-hidden rounded-3xl border border-white/8 bg-white/5 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-20 grid grid-cols-1 gap-px overflow-hidden rounded-3xl border border-[var(--border-subtle)] bg-[var(--line)] sm:grid-cols-2 lg:grid-cols-3">
           {stats.map((s, i) => (
             <div
               key={s.label}
-              className="group relative overflow-hidden bg-charcoal/85 p-8 transition-all duration-500 hover:bg-graphite md:p-10"
+              className="group relative overflow-hidden bg-[var(--card-bg)] p-8 transition-all duration-500 hover:bg-[var(--card-bg-hover)] md:p-10"
             >
               <div className="pointer-events-none absolute -inset-y-12 -inset-x-12 opacity-0 transition-opacity duration-700 group-hover:opacity-100">
-                <div className="absolute inset-0 bg-amber/10 blur-3xl" />
+                <div className="absolute inset-0 bg-[var(--accent)]/10 blur-3xl" />
               </div>
 
               <div className="relative flex items-baseline gap-1 text-display-lg font-semibold leading-none text-gradient-amber">
-                {s.prefix && <span className="text-3xl text-off-white/55">{s.prefix}</span>}
+                {s.prefix && <span className="text-3xl text-[var(--text-secondary)]">{s.prefix}</span>}
                 <CountUp to={s.value} decimals={s.decimals ?? 0} />
                 {s.suffix && <span className="text-3xl">{s.suffix}</span>}
               </div>
-              <p className="relative mt-5 text-sm font-medium uppercase tracking-[0.18em] text-off-white/85">
+              <p className="relative mt-5 text-sm font-medium uppercase tracking-[0.18em] text-[var(--text-primary)]">
                 {s.label}
               </p>
-              <p className="relative mt-1.5 text-xs text-off-white/50">{s.description}</p>
+              <p className="relative mt-1.5 text-xs text-[var(--text-secondary)]">{s.description}</p>
 
-              <span className="absolute right-6 top-6 font-mono text-[10px] uppercase tracking-[0.2em] text-off-white/25">
+              <span className="absolute right-6 top-6 font-mono text-[10px] uppercase tracking-[0.2em] text-[var(--text-tertiary)]">
                 {String(i + 1).padStart(2, '0')}
               </span>
             </div>

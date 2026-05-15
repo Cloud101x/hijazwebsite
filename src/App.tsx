@@ -1,6 +1,7 @@
 import { useEffect } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { ThemeProvider } from './hooks/useTheme';
 import { Navbar } from './components/Navbar';
 import { ScrollProgress } from './components/ScrollProgress';
 import { Cursor } from './components/Cursor';
@@ -62,36 +63,37 @@ export default function App() {
   }, []);
 
   return (
-    <div className="relative min-h-screen overflow-hidden bg-obsidian text-off-white">
-      <Cursor />
-      <ScrollProgress />
-      <Navbar />
+    <ThemeProvider>
+      <div className="relative min-h-screen overflow-hidden bg-obsidian text-off-white">
+        <Cursor />
+        <ScrollProgress />
+        <Navbar />
 
-      <main className="relative">
-        <Hero />
-        <TrustedBy />
-        <Services />
-        <FeaturedProjects />
-        <TechStack />
-        <WhyChooseUs />
-        <Process />
-        <Stats />
-        <Studio />
-        <Testimonials />
-        <CTA />
-      </main>
+        <main className="relative">
+          <Hero />
+          <TrustedBy />
+          <Services />
+          <FeaturedProjects />
+          <TechStack />
+          <WhyChooseUs />
+          <Process />
+          <Stats />
+          <Studio />
+          <Testimonials />
+          <CTA />
+        </main>
 
-      <Footer />
+        <Footer />
 
-      {/* Global ambient overlays */}
-      <div
-        aria-hidden
-        className="pointer-events-none fixed inset-0 z-0 opacity-[0.025]"
-        style={{
-          backgroundImage:
-            "url(\"data:image/svg+xml;utf8,<svg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>\")",
-        }}
-      />
-    </div>
+        <div
+          aria-hidden
+          className="pointer-events-none fixed inset-0 z-0 opacity-[0.025]"
+          style={{
+            backgroundImage:
+              "url(\"data:image/svg+xml;utf8,<svg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>\")",
+          }}
+        />
+      </div>
+    </ThemeProvider>
   );
 }

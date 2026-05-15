@@ -42,7 +42,7 @@ export function Hero() {
     <section
       id="top"
       ref={containerRef}
-      className="relative isolate flex min-h-[100svh] flex-col overflow-hidden pt-20 md:pt-24"
+      className="relative isolate flex min-h-[100svh] flex-col overflow-hidden pt-14 sm:pt-20 md:pt-24"
     >
       {/* Background visuals */}
       <div className="absolute inset-0 -z-10">
@@ -52,7 +52,7 @@ export function Hero() {
           className="absolute inset-0 h-full w-full object-cover opacity-[0.07]"
           loading="eager"
         />
-        <div className="absolute inset-0 grid-bg opacity-60" />
+        <div className="absolute inset-0 grid-db opacity-60" />
         <div className="hero-glow absolute left-1/2 top-[30%] -translate-x-1/2 -translate-y-1/2">
           <GlowOrb size={1100} color="amber" intensity="strong" />
         </div>
@@ -61,7 +61,7 @@ export function Hero() {
         <Suspense fallback={null}>
           <AmbientField className="absolute inset-0 opacity-70 mask-fade-y" />
         </Suspense>
-        <div className="absolute inset-x-0 bottom-0 h-48 bg-gradient-to-t from-obsidian via-obsidian/70 to-transparent" />
+        <div className="absolute inset-x-0 bottom-0 h-48 bg-gradient-to-t from-[var(--bg-primary)] via-[var(--bg-primary)]/70 to-transparent" />
 
         {/* Cinematic corner brackets */}
         <CornerBrackets />
@@ -86,13 +86,13 @@ export function Hero() {
               </span>
               Now booking Q3 — limited engagements
               <span className="mx-1 h-3 w-px bg-white/15" />
-              <span className="font-mono text-amber/90">v4.0 · ABV</span>
+              <span className="font-mono text-[var(--accent)]">v4.0 · ABV</span>
             </span>
           </motion.div>
 
           <motion.h1
             variants={fadeUp}
-            className="text-display-xl font-semibold text-gradient-amber"
+            className="text-display-xl font-semibold text-[var(--text-primary)]"
           >
             <span className="inline-flex flex-wrap items-baseline justify-center gap-x-3 gap-y-1">
               {headlineWords.map((word, i) => (
@@ -123,7 +123,7 @@ export function Hero() {
                     duration: 1.2,
                     ease: [0.16, 1, 0.3, 1],
                   }}
-                  className={`inline-block ${word === 'world.' ? 'font-serif italic text-amber' : ''}`}
+                  className={`inline-block ${word === 'world.' || word === 'Abuja.' ? 'font-serif italic text-[var(--accent)]' : ''}`}
                 >
                   {word}
                 </motion.span>
@@ -133,7 +133,7 @@ export function Hero() {
 
           <motion.p
             variants={fadeUp}
-            className="mt-8 max-w-2xl text-balance text-base leading-relaxed text-off-white/55 md:text-lg"
+            className="mt-8 max-w-2xl text-balance text-base leading-relaxed text-[var(--text-secondary)] md:text-lg"
           >
             Hijaz is a product studio in Abuja that builds software fast —
             with the architecture and craft your product deserves. We ship a year's worth
@@ -169,10 +169,10 @@ export function Hero() {
             transition={{ delay: 1.55, duration: 1, ease: [0.16, 1, 0.3, 1] }}
             className="mt-14 flex flex-col items-center gap-4"
           >
-            <p className="text-[11px] font-medium uppercase tracking-[0.22em] text-off-white/35">
-              Trusted by Africa’s category leaders
+            <p className="text-[11px] font-medium uppercase tracking-[0.22em] text-[var(--text-tertiary)]">
+              Trusted by Africa's category leaders
             </p>
-            <div className="flex flex-wrap items-center justify-center gap-x-9 gap-y-4 text-off-white/45">
+            <div className="flex flex-wrap items-center justify-center gap-x-9 gap-y-4 text-[var(--text-tertiary)]">
               {heroPartners.map(({ name, Logo }) => (
                 <Logo
                   key={name}
@@ -191,53 +191,53 @@ export function Hero() {
           initial={{ opacity: 0, y: 80, scale: 0.92 }}
           animate={{ opacity: 1, y: 0, scale: 1 }}
           transition={{ delay: 1.2, duration: 1.4, ease: [0.16, 1, 0.3, 1] }}
-          className="relative mx-auto mt-20 max-w-5xl"
+          className="relative mx-auto mt-12 max-w-5xl sm:mt-16 md:mt-20"
         >
-          <div className="border-gradient relative overflow-hidden rounded-3xl bg-black/40 backdrop-blur-xl shadow-card noise">
-            <div className="flex items-center justify-between border-b border-white/5 bg-black/40 px-5 py-3">
+          <div className="border-gradient relative overflow-hidden rounded-3xl bg-[var(--overlay-bg)] backdrop-blur-xl shadow-card noise">
+            <div className="flex items-center justify-between border-b border-[var(--border-subtle)] bg-[var(--overlay-bg)] px-5 py-3">
               <div className="flex items-center gap-2">
                 <span className="h-2.5 w-2.5 rounded-full bg-white/10" />
                 <span className="h-2.5 w-2.5 rounded-full bg-white/10" />
                 <span className="h-2.5 w-2.5 rounded-full bg-amber/70 shadow-ember-sm" />
               </div>
-              <div className="flex items-center gap-2 rounded-full border border-white/5 bg-white/[0.02] px-3 py-1 text-[11px] font-mono text-off-white/45">
+              <div className="flex items-center gap-2 rounded-full border border-[var(--border-subtle)] bg-[var(--surface-glass)] px-3 py-1 text-[11px] font-mono text-[var(--text-tertiary)]">
                 <span className="h-1.5 w-1.5 rounded-full bg-amber/80" />
                 hijaz.ng / canvas / production · ABV
               </div>
-              <div className="hidden font-mono text-[11px] text-off-white/35 md:block">
+              <div className="hidden font-mono text-[11px] text-[var(--text-tertiary)] md:block">
                 {lagosTime} WAT
               </div>
             </div>
 
             <div className="relative grid grid-cols-1 lg:grid-cols-[1.1fr_1fr]">
               <div className="relative aspect-[4/3] lg:aspect-auto lg:min-h-[440px]">
-                <Suspense fallback={<div className="absolute inset-0 bg-gradient-to-br from-charcoal to-black" />}>
+                <Suspense fallback={<div className="absolute inset-0 bg-gradient-to-br from-[var(--bg-surface)] to-black" />}>
                   <HeroScene className="absolute inset-0" />
                 </Suspense>
                 <div className="pointer-events-none absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-black/80 to-transparent" />
                 <div
                   ref={ribbonRef}
-                  className="absolute bottom-4 left-4 right-4 rounded-xl border border-white/8 bg-black/50 p-3 backdrop-blur-md"
+                  className="absolute bottom-4 left-4 right-4 rounded-xl border border-[var(--border-subtle)] bg-[var(--overlay-bg)] p-3 backdrop-blur-md"
                   style={{
                     backgroundImage:
                       'linear-gradient(90deg, rgba(255,106,0,0.05) 0%, rgba(255,140,66,0.18) 50%, rgba(255,106,0,0.05) 100%)',
                     backgroundSize: '200% 100%',
                   }}
                 >
-                  <div className="flex items-center justify-between text-[10px] font-mono uppercase tracking-[0.18em] text-off-white/55">
+                  <div className="flex items-center justify-between text-[10px] font-mono uppercase tracking-[0.18em] text-[var(--text-secondary)]">
                     <span>render · 60fps · webgl 2.0</span>
-                    <span className="text-amber/80">live</span>
+                    <span className="text-[var(--accent)]">live</span>
                   </div>
                 </div>
               </div>
 
-              <div className="relative flex flex-col justify-between gap-6 border-t border-white/5 bg-gradient-to-br from-black/60 to-graphite/50 p-6 lg:border-l lg:border-t-0 lg:p-8">
+              <div className="relative flex flex-col justify-between gap-6 border-t border-[var(--border-subtle)] bg-gradient-to-br from-black/60 to-[var(--card-bg-hover)] p-6 lg:border-l lg:border-t-0 lg:p-8">
                 <div className="flex flex-col gap-5">
                   <div className="flex items-center justify-between">
-                    <span className="text-[11px] font-mono uppercase tracking-[0.2em] text-off-white/45">
+                    <span className="text-[11px] font-mono uppercase tracking-[0.2em] text-[var(--text-tertiary)]">
                       Operating envelope
                     </span>
-                    <span className="rounded-full bg-amber/15 px-2 py-0.5 text-[10px] font-medium text-amber">
+                    <span className="rounded-full bg-[var(--accent)]/15 px-2 py-0.5 text-[10px] font-medium text-[var(--accent)]">
                       Live
                     </span>
                   </div>
@@ -249,12 +249,12 @@ export function Hero() {
                       { label: 'Code quality', value: '99.97%', sub: 'uptime SLA' },
                       { label: 'Projects live', value: '180+', sub: 'across 14 markets' },
                     ].map((m) => (
-                      <div key={m.label} className="rounded-xl border border-white/5 bg-white/[0.02] p-3">
-                        <p className="text-[10px] font-mono uppercase tracking-[0.18em] text-off-white/40">
+                      <div key={m.label} className="rounded-xl border border-[var(--border-subtle)] bg-[var(--surface-glass)] p-3">
+                        <p className="text-[10px] font-mono uppercase tracking-[0.18em] text-[var(--text-tertiary)]">
                           {m.label}
                         </p>
                         <p className="mt-1 font-serif text-2xl text-gradient-amber">{m.value}</p>
-                        <p className="text-[10px] text-off-white/35">{m.sub}</p>
+                        <p className="text-[10px] text-[var(--text-tertiary)]">{m.sub}</p>
                       </div>
                     ))}
                   </div>
@@ -266,8 +266,8 @@ export function Hero() {
                       { label: 'Production', pct: 64 },
                     ].map((row) => (
                       <div key={row.label} className="flex items-center gap-3">
-                        <span className="w-24 text-[11px] text-off-white/55">{row.label}</span>
-                        <div className="relative h-1 flex-1 overflow-hidden rounded-full bg-white/5">
+                        <span className="w-24 text-[11px] text-[var(--text-secondary)]">{row.label}</span>
+                        <div className="relative h-1 flex-1 overflow-hidden rounded-full bg-[var(--line)]">
                           <motion.span
                             initial={{ width: 0 }}
                             animate={{ width: `${row.pct}%` }}
@@ -275,7 +275,7 @@ export function Hero() {
                             className="absolute inset-y-0 left-0 rounded-full bg-gradient-to-r from-ember to-amber shadow-ember-sm"
                           />
                         </div>
-                        <span className="w-10 text-right font-mono text-[11px] text-off-white/45">
+                        <span className="w-10 text-right font-mono text-[11px] text-[var(--text-tertiary)]">
                           {row.pct}%
                         </span>
                       </div>
@@ -283,25 +283,25 @@ export function Hero() {
                   </div>
                 </div>
 
-                <div className="flex items-center justify-between rounded-xl border border-white/5 bg-black/40 p-3">
+                <div className="flex items-center justify-between rounded-xl border border-[var(--border-subtle)] bg-[var(--overlay-bg)] p-3">
                   <div className="flex items-center gap-3">
                     <div className="relative grid h-9 w-9 place-items-center rounded-lg bg-gradient-to-br from-amber to-ember shadow-ember-sm">
-                      <svg viewBox="0 0 16 16" className="h-4 w-4 text-off-white" fill="currentColor">
+                      <svg viewBox="0 0 16 16" className="h-4 w-4 text-[var(--text-primary)]" fill="currentColor">
                         <path d="M5 2l8 6-8 6V2z" />
                       </svg>
                     </div>
                     <div>
-                      <p className="text-xs text-off-white/85">Ship to production</p>
-                      <p className="text-[10px] text-off-white/40">Lead engineer · Abuja pod 03</p>
+                      <p className="text-xs text-[var(--text-primary)]">Ship to production</p>
+                      <p className="text-[10px] text-[var(--text-tertiary)]">Lead engineer · Abuja pod 03</p>
                     </div>
                   </div>
-                  <span className="font-mono text-[10px] text-off-white/40">⌘ + K</span>
+                  <span className="font-mono text-[10px] text-[var(--text-tertiary)]">⌘ + K</span>
                 </div>
               </div>
             </div>
           </div>
 
-          <div className="pointer-events-none absolute -inset-x-12 -inset-y-8 -z-10 rounded-[40px] bg-amber/10 blur-3xl" />
+          <div className="pointer-events-none absolute -inset-x-12 -inset-y-8 -z-10 rounded-[40px] bg-[var(--accent)]/10 blur-3xl" />
         </motion.div>
 
         {/* Press row */}
@@ -310,10 +310,10 @@ export function Hero() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ delay: 0.2, duration: 1, ease: [0.16, 1, 0.3, 1] }}
-          className="relative mx-auto mt-20 max-w-6xl"
+          className="relative mx-auto mt-12 max-w-6xl sm:mt-16 md:mt-20"
         >
           <div className="flex items-center gap-4 px-4">
-            <span className="text-[11px] font-medium uppercase tracking-[0.22em] text-off-white/35">
+            <span className="text-[11px] font-medium uppercase tracking-[0.22em] text-[var(--text-tertiary)]">
               As featured in
             </span>
             <div className="h-px flex-1 bg-gradient-to-r from-white/10 to-transparent" />
@@ -323,12 +323,12 @@ export function Hero() {
               {[...press, ...press].map((p, i) => (
                 <div
                   key={`${p.outlet}-${i}`}
-                  className="group flex shrink-0 items-center gap-3 text-off-white/45"
+                  className="group flex shrink-0 items-center gap-3 text-[var(--text-tertiary)]"
                 >
-                  <span className="font-serif text-xl italic tracking-tight text-off-white/70 transition-colors group-hover:text-off-white">
+                  <span className="font-serif text-xl italic tracking-tight text-[var(--text-primary)] transition-colors group-hover:text-[var(--text-primary)]">
                     {p.outlet}
                   </span>
-                  <span className="hidden text-xs italic text-off-white/40 md:block">
+                  <span className="hidden text-xs italic text-[var(--text-tertiary)] md:block">
                     "{p.quote}"
                   </span>
                   <span className="hidden h-1 w-1 rounded-full bg-amber/40 md:block" />
@@ -344,7 +344,7 @@ export function Hero() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ delay: 0.4, duration: 1, ease: [0.16, 1, 0.3, 1] }}
-          className="relative mx-auto mt-16 grid max-w-6xl grid-cols-2 gap-px overflow-hidden rounded-2xl border border-white/8 bg-white/5 md:grid-cols-4"
+          className="relative mx-auto mt-10 grid max-w-6xl grid-cols-2 gap-px overflow-hidden rounded-2xl border border-[var(--line-strong)] bg-[var(--line)] md:grid-cols-4"
         >
           {[
             { kpi: '180+', label: 'Products shipped' },
@@ -352,9 +352,9 @@ export function Hero() {
             { kpi: '42', label: 'Senior staff · Abuja' },
             { kpi: '99.97%', label: 'Production uptime' },
           ].map((item) => (
-            <div key={item.label} className="bg-charcoal/85 px-5 py-5">
+            <div key={item.label} className="bg-[var(--card-bg)] px-5 py-5">
               <p className="font-serif text-2xl text-gradient-amber md:text-3xl">{item.kpi}</p>
-              <p className="mt-1 text-[10px] uppercase tracking-[0.2em] text-off-white/45">
+              <p className="mt-1 text-[10px] uppercase tracking-[0.2em] text-[var(--text-tertiary)]">
                 {item.label}
               </p>
             </div>
@@ -367,11 +367,11 @@ export function Hero() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 2.2, duration: 1 }}
-        className="relative z-10 mt-16 flex justify-center pb-8"
+        className="relative z-10 mt-10 flex justify-center pb-8 sm:mt-16"
       >
-        <div className="flex flex-col items-center gap-2 text-[10px] font-mono uppercase tracking-[0.22em] text-off-white/40">
+        <div className="flex flex-col items-center gap-2 text-[10px] font-mono uppercase tracking-[0.22em] text-[var(--text-tertiary)]">
           <span>Scroll</span>
-          <span className="relative flex h-7 w-4 justify-center overflow-hidden rounded-full border border-white/15">
+          <span className="relative flex h-7 w-4 justify-center overflow-hidden rounded-full border border-[var(--line-strong)]">
             <motion.span
               animate={{ y: [0, 14, 0] }}
               transition={{ duration: 2.4, repeat: Infinity, ease: 'easeInOut' }}
@@ -399,7 +399,7 @@ function CornerBrackets() {
 function SideRail({ side, lagosTime }: { side: 'left' | 'right'; lagosTime?: string }) {
   return (
     <div
-      className={`pointer-events-none absolute top-1/2 hidden -translate-y-1/2 select-none flex-col items-center gap-3 text-[10px] font-mono uppercase tracking-[0.22em] text-off-white/35 lg:flex ${
+      className={`pointer-events-none absolute top-1/2 hidden -translate-y-1/2 select-none flex-col items-center gap-3 text-[10px] font-mono uppercase tracking-[0.22em] text-[var(--text-tertiary)] lg:flex ${
         side === 'left' ? 'left-6' : 'right-6'
       }`}
     >
@@ -453,7 +453,7 @@ function FloatingAnnotations({ lagosTime }: { lagosTime: string }) {
         className="pointer-events-none absolute right-6 top-[36%] z-[5] hidden xl:block"
       >
         <FloatingCard
-          icon={<span className="text-amber">↑</span>}
+          icon={<span className="text-[var(--accent)]">↑</span>}
           eyebrow="Last 30 days"
           title="180+"
           sub="projects shipped across fintech, AI, logistics, health"
@@ -467,10 +467,10 @@ function FloatingAnnotations({ lagosTime }: { lagosTime: string }) {
         className="pointer-events-none absolute right-6 top-[58%] z-[5] hidden xl:block"
       >
         <FloatingCard
-          icon={<span className="text-amber">★</span>}
+          icon={<span className="text-[var(--accent)]">★</span>}
           eyebrow="Awwwards SOTD"
           title="NovaPay Africa"
-          sub="this week’s site of the day"
+          sub="this week's site of the day"
         />
       </motion.div>
     </>
@@ -489,15 +489,15 @@ function FloatingCard({
   sub: string;
 }) {
   return (
-    <div className="border-gradient relative w-56 overflow-hidden rounded-2xl bg-black/55 p-4 backdrop-blur-xl shadow-card">
+    <div className="border-gradient relative w-56 overflow-hidden rounded-2xl bg-[var(--overlay-bg)] p-4 backdrop-blur-xl shadow-card">
       <div className="flex items-center gap-2">
         {icon}
-        <p className="font-mono text-[10px] uppercase tracking-[0.22em] text-off-white/45">
+        <p className="font-mono text-[10px] uppercase tracking-[0.22em] text-[var(--text-tertiary)]">
           {eyebrow}
         </p>
       </div>
       <p className="mt-2 font-serif text-2xl text-gradient-amber">{title}</p>
-      <p className="mt-1 text-[11px] leading-snug text-off-white/55">{sub}</p>
+      <p className="mt-1 text-[11px] leading-snug text-[var(--text-secondary)]">{sub}</p>
     </div>
   );
 }

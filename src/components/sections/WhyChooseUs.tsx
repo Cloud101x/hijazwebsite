@@ -52,7 +52,7 @@ export function WhyChooseUs() {
           title={
             <>
               Four reasons CTOs <br />
-              <span className="font-serif italic text-amber">stop looking</span> after they meet us.
+              <span className="font-serif italic text-[var(--accent)]">stop looking</span> after they meet us.
             </>
           }
           description="We are not the cheapest. We are not the biggest. We are the one you call when the work has to be undeniable."
@@ -66,11 +66,11 @@ export function WhyChooseUs() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: '-60px' }}
               transition={{ duration: 0.95, delay: i * 0.08, ease: [0.16, 1, 0.3, 1] }}
-              className="group relative overflow-hidden rounded-3xl border border-white/8 bg-charcoal/65 p-8 shadow-card backdrop-blur-xl transition-all duration-700 hover:border-amber/25 hover:bg-charcoal/85 md:p-10"
+              className="group relative overflow-hidden rounded-3xl border border-[var(--border-subtle)] bg-[var(--card-bg)] p-8 shadow-card backdrop-blur-xl transition-all duration-700 hover:border-amber/25 hover:bg-[var(--card-bg-hover)] md:p-10"
             >
               <div className="pointer-events-none absolute inset-0">
                 <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/10 to-transparent opacity-60" />
-                <div className="absolute -top-24 right-0 h-56 w-56 rounded-full bg-amber/15 opacity-0 blur-3xl transition-opacity duration-700 group-hover:opacity-100" />
+                <div className="absolute -top-24 right-0 h-56 w-56 rounded-full bg-[var(--accent)]/15 opacity-0 blur-3xl transition-opacity duration-700 group-hover:opacity-100" />
               </div>
 
               <div className="grid grid-cols-[1fr_auto] gap-8">
@@ -78,16 +78,16 @@ export function WhyChooseUs() {
                   <span className="font-mono text-[11px] uppercase tracking-[0.22em] text-amber/70">
                     {String(i + 1).padStart(2, '0')} — Pillar
                   </span>
-                  <h3 className="mt-4 text-2xl font-medium text-off-white md:text-3xl">
+                  <h3 className="mt-4 text-2xl font-medium text-[var(--text-primary)] md:text-3xl">
                     {pillar.title}
                   </h3>
-                  <p className="mt-4 max-w-md text-sm leading-relaxed text-off-white/55">
+                  <p className="mt-4 max-w-md text-sm leading-relaxed text-[var(--text-secondary)]">
                     {pillar.description}
                   </p>
                   <ul className="mt-6 space-y-2">
                     {pillar.bullets.map((b) => (
-                      <li key={b} className="flex items-center gap-3 text-sm text-off-white/75">
-                        <span className="grid h-5 w-5 place-items-center rounded-full border border-amber/30 bg-amber/10 text-amber">
+                      <li key={b} className="flex items-center gap-3 text-sm text-[var(--text-primary)]">
+                        <span className="grid h-5 w-5 place-items-center rounded-full border border-amber/30 bg-[var(--accent)]/10 text-[var(--accent)]">
                           <svg viewBox="0 0 12 12" className="h-2.5 w-2.5" fill="none" stroke="currentColor" strokeWidth="2.5">
                             <path d="M2 6.5l2.5 2.5L10 3" strokeLinecap="round" strokeLinejoin="round" />
                           </svg>

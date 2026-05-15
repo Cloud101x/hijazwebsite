@@ -94,21 +94,21 @@ export function Services() {
   return (
     <section id="services" className="relative overflow-hidden py-28 md:py-36">
       <GlowOrb className="left-1/2 top-0 -translate-x-1/2" size={780} color="amber" intensity="soft" />
-      <div className="absolute inset-0 -z-10 grid-bg opacity-30" />
+      <div className="absolute inset-0 -z-10 grid-db opacity-30" />
 
       <div className="container-custom relative">
         <SectionHeading
           eyebrow="Capabilities"
           title={
             <>
-              A vertically integrated <span className="font-serif italic text-amber">studio</span>{' '}
+              A vertically integrated <span className="font-serif italic text-[var(--accent)]">studio</span>{' '}
               <br className="hidden md:block" /> for ambitious software.
             </>
           }
           description="From the first principles sketch to global scale. Six disciplines, one obsessively senior team — operating as a single product organism."
         />
 
-        <div className="mt-20 grid grid-cols-1 gap-px overflow-hidden rounded-3xl border border-white/8 bg-white/5 md:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-20 grid grid-cols-1 gap-px overflow-hidden rounded-3xl border border-[var(--border-subtle)] bg-[var(--line)] md:grid-cols-2 lg:grid-cols-3">
           {services.map((service, i) => (
             <motion.article
               key={service.index}
@@ -116,27 +116,27 @@ export function Services() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: '-60px' }}
               transition={{ duration: 0.85, delay: i * 0.07, ease: [0.16, 1, 0.3, 1] }}
-              className="group relative flex flex-col gap-6 bg-charcoal/85 p-8 transition-all duration-500 hover:bg-graphite/80"
+              className="group relative flex flex-col gap-6 bg-[var(--card-bg)] p-8 transition-all duration-500 hover:bg-[var(--card-bg-hover)]"
             >
               <div className="pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-500 group-hover:opacity-100">
                 <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-amber/60 to-transparent" />
-                <div className="absolute -inset-x-10 -top-20 h-40 bg-amber/10 blur-3xl" />
+                <div className="absolute -inset-x-10 -top-20 h-40 bg-[var(--accent)]/10 blur-3xl" />
               </div>
 
               <div className="relative flex items-start justify-between">
-                <div className="grid h-12 w-12 place-items-center rounded-xl border border-white/8 bg-white/[0.03] text-amber transition-all duration-500 group-hover:border-amber/40 group-hover:bg-amber/10 group-hover:text-flame group-hover:shadow-ember-sm">
+                <div className="grid h-12 w-12 place-items-center rounded-xl border border-[var(--border-subtle)] bg-[var(--surface-glass)] text-[var(--accent)] transition-all duration-500 group-hover:border-amber/40 group-hover:bg-[var(--accent)]/10 group-hover:text-flame group-hover:shadow-ember-sm">
                   {service.icon}
                 </div>
-                <span className="font-mono text-[11px] uppercase tracking-[0.2em] text-off-white/30">
+                <span className="font-mono text-[11px] uppercase tracking-[0.2em] text-[var(--text-tertiary)]">
                   {service.index} / 06
                 </span>
               </div>
 
               <div className="relative">
-                <h3 className="text-2xl font-medium tracking-tight text-off-white">
+                <h3 className="text-2xl font-medium tracking-tight text-[var(--text-primary)]">
                   {service.title}
                 </h3>
-                <p className="mt-3 text-sm leading-relaxed text-off-white/55">
+                <p className="mt-3 text-sm leading-relaxed text-[var(--text-secondary)]">
                   {service.description}
                 </p>
               </div>
@@ -145,14 +145,14 @@ export function Services() {
                 {service.capabilities.map((cap) => (
                   <span
                     key={cap}
-                    className="rounded-full border border-white/8 bg-black/30 px-2.5 py-1 text-[11px] text-off-white/60 transition-all duration-300 group-hover:border-amber/20 group-hover:text-off-white/85"
+                    className="rounded-full border border-[var(--border-subtle)] bg-[var(--overlay-bg)] px-2.5 py-1 text-[11px] text-[var(--text-secondary)] transition-all duration-300 group-hover:border-amber/20 group-hover:text-[var(--text-primary)]"
                   >
                     {cap}
                   </span>
                 ))}
               </div>
 
-              <div className="relative flex items-center gap-2 text-sm text-off-white/55 transition-colors duration-300 group-hover:text-amber">
+              <div className="relative flex items-center gap-2 text-sm text-[var(--text-secondary)] transition-colors duration-300 group-hover:text-[var(--accent)]">
                 <span>Explore practice</span>
                 <svg
                   className="h-3.5 w-3.5 transition-transform duration-500 group-hover:translate-x-1"

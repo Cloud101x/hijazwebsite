@@ -20,7 +20,7 @@ export function Studio() {
             title={
               <>
                 A small room of <br />
-                <span className="font-serif italic text-amber">very senior</span> people.
+                <span className="font-serif italic text-[var(--accent)]">very senior</span> people.
               </>
             }
             description="Forty-two engineers, designers, and operators across Abuja, Lagos, Accra, and Nairobi. Average tenure in the craft: 12 years. Average ego: small."
@@ -30,7 +30,7 @@ export function Studio() {
             {['Abuja · HQ', 'Lagos', 'Accra', 'Nairobi'].map((city, i) => (
               <span
                 key={city}
-                className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.03] px-3.5 py-1.5 text-xs text-off-white/70"
+                className="inline-flex items-center gap-2 rounded-full border border-[var(--border-subtle)] bg-[var(--surface-glass)] px-3.5 py-1.5 text-xs text-[var(--text-primary)]"
               >
                 <span
                   className="h-1.5 w-1.5 rounded-full bg-amber shadow-ember-sm"
@@ -48,7 +48,7 @@ export function Studio() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: '-60px' }}
             transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
-            className="border-gradient relative overflow-hidden rounded-3xl bg-charcoal/70 shadow-card"
+            className="border-gradient relative overflow-hidden rounded-3xl bg-[var(--card-bg)] shadow-card"
           >
             <div className="relative aspect-[4/3] overflow-hidden">
               <img
@@ -63,19 +63,19 @@ export function Studio() {
 
               <div className="absolute inset-x-6 bottom-6 flex items-end justify-between gap-6 md:inset-x-8 md:bottom-8">
                 <div>
-                  <p className="font-mono text-[11px] uppercase tracking-[0.22em] text-amber/80">
+                  <p className="font-mono text-[11px] uppercase tracking-[0.22em] text-[var(--accent)]">
                     Studio · Abuja HQ · Central Business District
                   </p>
-                  <p className="mt-3 max-w-md font-serif text-2xl italic leading-tight text-off-white md:text-3xl">
+                  <p className="mt-3 max-w-md font-serif text-2xl italic leading-tight text-[var(--text-primary)] md:text-3xl">
                     "We optimize for the work being undeniable. Everything else is a side effect."
                   </p>
-                  <p className="mt-3 text-xs text-off-white/55">
+                  <p className="mt-3 text-xs text-[var(--text-secondary)]">
                     — Adeola Hijazi, founding letter, Abuja, 2014
                   </p>
                 </div>
-                <div className="hidden shrink-0 rounded-2xl border border-white/10 bg-black/40 p-4 backdrop-blur-md md:block">
+                <div className="hidden shrink-0 rounded-2xl border border-[var(--border-subtle)] bg-[var(--overlay-bg)] p-4 backdrop-blur-md md:block">
                   <p className="font-serif text-3xl text-gradient-amber">42</p>
-                  <p className="text-[10px] uppercase tracking-[0.18em] text-off-white/55">
+                  <p className="text-[10px] uppercase tracking-[0.18em] text-[var(--text-secondary)]">
                     Senior staff
                   </p>
                 </div>
@@ -91,7 +91,7 @@ export function Studio() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: '-40px' }}
                 transition={{ duration: 0.85, delay: i * 0.08, ease: [0.16, 1, 0.3, 1] }}
-                className="group relative overflow-hidden rounded-2xl border border-white/8 bg-charcoal/65 shadow-card"
+                className="group relative overflow-hidden rounded-2xl border border-[var(--border-subtle)] bg-[var(--card-bg)] shadow-card"
               >
                 <div className="relative aspect-[4/5] overflow-hidden">
                   <img
@@ -104,14 +104,14 @@ export function Studio() {
                   <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent" />
                   <div className="absolute inset-0 bg-gradient-to-br from-amber/0 via-transparent to-amber/10 mix-blend-overlay opacity-0 transition-opacity duration-700 group-hover:opacity-100" />
 
-                  <div className="absolute right-3 top-3 rounded-full border border-white/10 bg-black/40 px-2 py-0.5 text-[9px] font-mono uppercase tracking-[0.18em] text-off-white/60 backdrop-blur-md">
+                  <div className="absolute right-3 top-3 rounded-full border border-[var(--border-subtle)] bg-[var(--overlay-bg)] px-2 py-0.5 text-[9px] font-mono uppercase tracking-[0.18em] text-[var(--text-secondary)] backdrop-blur-md">
                     {member.location}
                   </div>
 
-                  <figcaption className="absolute inset-x-4 bottom-4 text-off-white">
+                  <figcaption className="absolute inset-x-4 bottom-4 text-[var(--text-primary)]">
                     <p className="text-sm font-medium leading-tight">{member.name}</p>
-                    <p className="mt-0.5 text-[11px] text-off-white/65">{member.role}</p>
-                    <p className="mt-1.5 text-[10px] font-mono uppercase tracking-[0.18em] text-amber/80">
+                    <p className="mt-0.5 text-[11px] text-[var(--text-primary)]">{member.role}</p>
+                    <p className="mt-1.5 text-[10px] font-mono uppercase tracking-[0.18em] text-[var(--accent)]">
                       {member.former}
                     </p>
                   </figcaption>

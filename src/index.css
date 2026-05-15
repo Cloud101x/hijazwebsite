@@ -2,11 +2,73 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer base {
-  :root {
-    color-scheme: dark;
-  }
+/* ─── Theme tokens (outside layers so they always win) ─── */
+:root,
+[data-theme="light"] {
+  color-scheme: light;
+  --bg-primary: #F8F6F3;
+  --bg-surface: #EFEBE6;
+  --bg-surface-alt: #E5E0D9;
+  --bg-elevated: #D9D3CA;
+  --text-primary: #1C1917;
+  --text-secondary: rgba(28, 25, 23, 0.65);
+  --text-tertiary: rgba(28, 25, 23, 0.42);
+  --text-muted: #78716C;
+  --line: rgba(28, 25, 23, 0.09);
+  --line-strong: rgba(28, 25, 23, 0.16);
+  --border-subtle: rgba(28, 25, 23, 0.11);
+  --border-medium: rgba(28, 25, 23, 0.16);
+  --surface-glass: rgba(28, 25, 23, 0.04);
+  --surface-glass-hover: rgba(28, 25, 23, 0.08);
+  --accent: #D4570A;
+  --accent-secondary: #B34900;
+  --accent-glow: rgba(212, 87, 10, 0.30);
+  --card-bg: rgba(255, 255, 255, 0.80);
+  --card-bg-hover: rgba(255, 255, 255, 0.95);
+  --card-border: rgba(28, 25, 23, 0.11);
+  --overlay-bg: rgba(239, 235, 230, 0.85);
+  --scrollbar-track: #EFEBE6;
+  --scrollbar-thumb: #D0CCC6;
+  --grid-line: rgba(28, 25, 23, 0.07);
+  --selection-bg: rgba(212, 87, 10, 0.20);
+  --selection-text: #1C1917;
+  --shadow-card: 0 4px 24px -4px rgba(0, 0, 0, 0.08), 0 1px 2px -1px rgba(0, 0, 0, 0.04), 0 0 0 1px rgba(28, 25, 23, 0.06);
+  --shadow-card-hover: 0 12px 40px -8px rgba(0, 0, 0, 0.12), 0 0 0 1px rgba(212, 87, 10, 0.15);
+}
 
+[data-theme="dark"] {
+  color-scheme: dark;
+  --bg-primary: #050505;
+  --bg-surface: #0B0B0B;
+  --bg-surface-alt: #121212;
+  --bg-elevated: #1A1A1A;
+  --text-primary: #F5F5F5;
+  --text-secondary: rgba(245, 245, 245, 0.55);
+  --text-tertiary: rgba(245, 245, 245, 0.35);
+  --text-muted: #8B8B8B;
+  --line: rgba(255, 255, 255, 0.06);
+  --line-strong: rgba(255, 255, 255, 0.12);
+  --border-subtle: rgba(255, 255, 255, 0.08);
+  --border-medium: rgba(255, 255, 255, 0.10);
+  --surface-glass: rgba(255, 255, 255, 0.03);
+  --surface-glass-hover: rgba(255, 255, 255, 0.06);
+  --accent: #FF6A00;
+  --accent-secondary: #CC5500;
+  --accent-glow: rgba(255, 106, 0, 0.55);
+  --card-bg: rgba(11, 11, 11, 0.85);
+  --card-bg-hover: rgba(18, 18, 18, 0.8);
+  --card-border: rgba(255, 255, 255, 0.08);
+  --overlay-bg: rgba(0, 0, 0, 0.50);
+  --scrollbar-track: #050505;
+  --scrollbar-thumb: #1a1a1a;
+  --grid-line: rgba(255, 255, 255, 0.035);
+  --selection-bg: rgba(255, 106, 0, 0.32);
+  --selection-text: #fff;
+  --shadow-card: 0 24px 60px -24px rgba(0, 0, 0, 0.8), 0 1px 0 0 rgba(255, 255, 255, 0.04) inset;
+  --shadow-card-hover: 0 24px 60px -24px rgba(255, 106, 0, 0.2), 0 1px 0 0 rgba(255, 140, 66, 0.15) inset;
+}
+
+@layer base {
   * {
     @apply border-line;
   }
@@ -20,23 +82,34 @@
 
   html,
   body {
-    background: #050505;
-    color: #f5f5f5;
+    background: var(--bg-primary);
+    color: var(--text-primary);
     overflow-x: hidden;
   }
 
   body {
     font-family: 'Inter', system-ui, sans-serif;
     font-feature-settings: 'cv11', 'ss01', 'ss03';
+  }
+
+  [data-theme="dark"] body {
     background:
       radial-gradient(1200px 800px at 50% -10%, rgba(255, 106, 0, 0.12), transparent 60%),
       radial-gradient(900px 700px at 90% 20%, rgba(204, 85, 0, 0.07), transparent 70%),
-      #050505;
+      var(--bg-primary);
+  }
+
+  [data-theme="light"] body {
+    background:
+      radial-gradient(1200px 800px at 50% -10%, rgba(212, 87, 10, 0.07), transparent 55%),
+      radial-gradient(900px 700px at 90% 20%, rgba(180, 60, 0, 0.04), transparent 65%),
+      radial-gradient(600px 600px at 10% 80%, rgba(212, 87, 10, 0.03), transparent 50%),
+      var(--bg-primary);
   }
 
   ::selection {
-    background: rgba(255, 106, 0, 0.32);
-    color: #fff;
+    background: var(--selection-bg);
+    color: var(--selection-text);
   }
 
   ::-webkit-scrollbar {
@@ -44,60 +117,64 @@
     height: 10px;
   }
   ::-webkit-scrollbar-track {
-    background: #050505;
+    background: var(--scrollbar-track);
   }
   ::-webkit-scrollbar-thumb {
-    background: linear-gradient(180deg, #1a1a1a, #0b0b0b);
+    background: linear-gradient(180deg, var(--bg-elevated), var(--bg-surface));
     border-radius: 999px;
-    border: 2px solid #050505;
+    border: 2px solid var(--scrollbar-track);
   }
   ::-webkit-scrollbar-thumb:hover {
-    background: linear-gradient(180deg, #cc5500, #7a2f00);
+    background: linear-gradient(180deg, var(--accent), var(--accent-secondary));
   }
+}
 
-  h1, h2, h3, h4, h5 {
-    @apply text-off-white tracking-tight;
-  }
+/* ─── Gradient text (outside layers so they always apply) ─── */
+.text-gradient-amber {
+  background: linear-gradient(180deg, #1C1917 30%, #D4570A 100%) !important;
+  -webkit-background-clip: text !important;
+  background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+}
+
+[data-theme="dark"] .text-gradient-amber {
+  background: linear-gradient(180deg, #FFFFFF 0%, #FFE0C8 45%, #FF6A00 100%) !important;
+  -webkit-background-clip: text !important;
+  background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+}
+
+.text-gradient-ember {
+  background: linear-gradient(135deg, var(--accent) 0%, var(--accent-secondary) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.text-gradient-mute {
+  background: linear-gradient(180deg, var(--text-primary) 0%, var(--text-muted) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 @layer components {
   .container-custom {
-    @apply mx-auto w-full max-w-[1320px] px-6 md:px-10;
-  }
-
-  .text-gradient-amber {
-    background: linear-gradient(180deg, #ffffff 0%, #ffe4cc 40%, #ff8c42 100%);
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-  }
-
-  .text-gradient-ember {
-    background: linear-gradient(135deg, #ff8c42 0%, #ff6a00 50%, #cc5500 100%);
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-  }
-
-  .text-gradient-mute {
-    background: linear-gradient(180deg, #f5f5f5 0%, #8b8b8b 100%);
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
+    @apply mx-auto w-full max-w-[1320px] px-5 md:px-10;
   }
 
   .glass {
-    background: linear-gradient(180deg, rgba(255, 255, 255, 0.04), rgba(255, 255, 255, 0.01));
+    background: var(--surface-glass);
     backdrop-filter: blur(14px) saturate(140%);
     -webkit-backdrop-filter: blur(14px) saturate(140%);
-    border: 1px solid rgba(255, 255, 255, 0.07);
+    border: 1px solid var(--border-subtle);
   }
 
   .glass-strong {
-    background: linear-gradient(180deg, rgba(20, 14, 10, 0.7), rgba(8, 6, 4, 0.5));
+    background: var(--card-bg);
     backdrop-filter: blur(22px) saturate(160%);
     -webkit-backdrop-filter: blur(22px) saturate(160%);
-    border: 1px solid rgba(255, 255, 255, 0.07);
+    border: 1px solid var(--card-border);
   }
 
   .border-gradient {
@@ -110,7 +187,7 @@
     inset: 0;
     padding: 1px;
     border-radius: inherit;
-    background: linear-gradient(135deg, rgba(255, 140, 66, 0.55), rgba(255, 255, 255, 0.06) 30%, rgba(255, 255, 255, 0.03) 70%, rgba(255, 140, 66, 0.4));
+    background: linear-gradient(135deg, var(--accent), var(--border-subtle) 30%, var(--line) 70%, var(--accent));
     -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
     -webkit-mask-composite: xor;
     mask-composite: exclude;
@@ -119,49 +196,62 @@
 
   .ember-glow {
     box-shadow:
-      0 0 0 1px rgba(255, 140, 66, 0.18),
-      0 0 24px -4px rgba(255, 106, 0, 0.45),
-      0 12px 60px -12px rgba(255, 106, 0, 0.5);
+      0 0 0 1px color-mix(in srgb, var(--accent) 18%, transparent),
+      0 0 24px -4px var(--accent-glow),
+      0 12px 60px -12px var(--accent-glow);
   }
 
   .btn-primary {
-    @apply relative inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 text-sm font-medium text-off-white transition-all duration-300;
-    background: linear-gradient(180deg, #ff8c42 0%, #ff6a00 50%, #cc5500 100%);
+    @apply relative inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 text-sm font-medium transition-all duration-300;
+    background: linear-gradient(180deg, var(--accent), var(--accent-secondary));
+    color: #fff;
     box-shadow:
       0 1px 0 0 rgba(255, 255, 255, 0.25) inset,
-      0 -1px 0 0 rgba(0, 0, 0, 0.25) inset,
-      0 10px 30px -10px rgba(255, 106, 0, 0.6),
-      0 0 0 1px rgba(255, 140, 66, 0.4);
+      0 10px 30px -10px var(--accent-glow),
+      0 0 0 1px color-mix(in srgb, var(--accent) 40%, transparent);
   }
   .btn-primary:hover {
     transform: translateY(-1px);
     box-shadow:
       0 1px 0 0 rgba(255, 255, 255, 0.3) inset,
-      0 -1px 0 0 rgba(0, 0, 0, 0.25) inset,
-      0 18px 50px -10px rgba(255, 106, 0, 0.7),
-      0 0 0 1px rgba(255, 140, 66, 0.55);
+      0 18px 50px -10px var(--accent-glow),
+      0 0 0 1px color-mix(in srgb, var(--accent) 55%, transparent);
   }
 
   .btn-ghost {
-    @apply relative inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 text-sm font-medium text-off-white transition-all duration-300;
-    background: rgba(255, 255, 255, 0.03);
-    border: 1px solid rgba(255, 255, 255, 0.09);
+    @apply relative inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 text-sm font-medium transition-all duration-300;
+    background: var(--surface-glass);
+    color: var(--text-primary);
+    border: 1px solid var(--border-medium);
     backdrop-filter: blur(10px);
   }
   .btn-ghost:hover {
-    background: rgba(255, 255, 255, 0.06);
-    border-color: rgba(255, 140, 66, 0.35);
-    color: #fff;
+    background: var(--surface-glass-hover);
+    border-color: color-mix(in srgb, var(--accent) 35%, transparent);
+    color: var(--text-primary);
   }
 
   .chip {
-    @apply inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.03] px-3 py-1 text-xs font-medium text-off-white/80 backdrop-blur-md;
+    @apply inline-flex items-center gap-2 rounded-full px-3 py-1 text-xs font-medium backdrop-blur-md;
+    background: var(--surface-glass);
+    border: 1px solid var(--border-medium);
+    color: var(--text-primary);
   }
 
   .grid-bg {
     background-image:
-      linear-gradient(rgba(255, 255, 255, 0.035) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(255, 255, 255, 0.035) 1px, transparent 1px);
+      linear-gradient(var(--grid-line) 1px, transparent 1px),
+      linear-gradient(90deg, var(--grid-line) 1px, transparent 1px);
+    background-size: 64px 64px;
+    background-position: -1px -1px;
+    mask-image: radial-gradient(ellipse 80% 60% at 50% 40%, #000 40%, transparent 90%);
+    -webkit-mask-image: radial-gradient(ellipse 80% 60% at 50% 40%, #000 40%, transparent 90%);
+  }
+
+  [data-theme="light"] .grid-bg {
+    background-image:
+      linear-gradient(rgba(28, 25, 23, 0.10) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(28, 25, 23, 0.10) 1px, transparent 1px);
     background-size: 64px 64px;
     background-position: -1px -1px;
     mask-image: radial-gradient(ellipse 80% 60% at 50% 40%, #000 40%, transparent 90%);
@@ -178,9 +268,14 @@
     background-image: url("data:image/svg+xml;utf8,<svg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
   }
 
+  [data-theme="light"] .noise::after {
+    opacity: 0.02;
+    mix-blend-mode: multiply;
+  }
+
   .divider {
     height: 1px;
-    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.12), transparent);
+    background: linear-gradient(90deg, transparent, var(--line-strong), transparent);
   }
 
   .reveal-mask {
@@ -189,7 +284,7 @@
   }
 
   .shimmer-text {
-    background: linear-gradient(90deg, #8b8b8b 0%, #ffffff 45%, #ff8c42 50%, #ffffff 55%, #8b8b8b 100%);
+    background: linear-gradient(90deg, var(--text-muted) 0%, var(--text-primary) 45%, var(--accent) 50%, var(--text-primary) 55%, var(--text-muted) 100%);
     background-size: 200% 100%;
     -webkit-background-clip: text;
     background-clip: text;

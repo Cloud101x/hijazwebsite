@@ -10,7 +10,7 @@ export function TrustedBy() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: '-80px' }}
           transition={{ duration: 0.7 }}
-          className="text-center text-[11px] font-medium uppercase tracking-[0.32em] text-off-white/40"
+          className="text-center text-[11px] font-medium uppercase tracking-[0.32em] text-[var(--text-tertiary)]"
         >
           Built alongside teams shaping the future of software
         </motion.p>
@@ -23,13 +23,13 @@ export function TrustedBy() {
                 className="group flex shrink-0 items-center transition-all duration-500"
                 title={name}
               >
-                <Logo className="h-6 w-auto text-off-white/40 transition-all duration-500 group-hover:text-off-white group-hover:drop-shadow-[0_0_12px_rgba(255,140,66,0.4)]" />
+                <Logo className="h-6 w-auto text-[var(--text-tertiary)] transition-all duration-500 group-hover:text-[var(--text-primary)] group-hover:drop-shadow-[0_0_12px_rgba(255,140,66,0.4)]" />
               </div>
             ))}
           </div>
         </div>
 
-        <div className="mt-16 grid grid-cols-2 gap-px overflow-hidden rounded-2xl border border-white/5 bg-white/5 sm:grid-cols-4">
+        <div className="mt-16 grid grid-cols-2 gap-px overflow-hidden rounded-2xl border border-[var(--border-subtle)] bg-[var(--line)] sm:grid-cols-4">
           {[
             { kpi: '2.4B+', label: 'Requests served' },
             { kpi: '180+', label: 'Engagements shipped' },
@@ -42,10 +42,10 @@ export function TrustedBy() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: '-40px' }}
               transition={{ duration: 0.7, delay: i * 0.08, ease: [0.16, 1, 0.3, 1] }}
-              className="bg-charcoal/80 px-6 py-7"
+              className="bg-[var(--card-bg)] px-6 py-7"
             >
               <p className="font-serif text-3xl text-gradient-amber md:text-4xl">{item.kpi}</p>
-              <p className="mt-1 text-xs uppercase tracking-[0.18em] text-off-white/45">{item.label}</p>
+              <p className="mt-1 text-xs uppercase tracking-[0.18em] text-[var(--text-tertiary)]">{item.label}</p>
             </motion.div>
           ))}
         </div>
