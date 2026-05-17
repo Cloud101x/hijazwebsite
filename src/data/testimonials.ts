@@ -39,23 +39,5 @@ export const testimonials: Testimonial[] = [
     company: 'Sahel Logistics',
     initials: 'NI',
     avatar: u('photo-1573497019940-1c28c88b4f3e'),
-  },
-  {
-    quote:
-      'Awwwards-grade craft and FAANG-grade engineering — built and shipped from Abuja. I do not know how they do both. The work is, simply, the best on the continent right now.',
-    name: 'Dr. Ibrahim Yusuf',
-    role: 'Chief Product Officer',
-    company: 'Ọmọ Health',
-    initials: 'IY',
-    avatar: u('photo-1568602471122-7832951cc4c5'),
-  },
-  {
-    quote:
-      'Their architecture review saved us a four-month rewrite — and pulled forward our CBN sandbox launch by a quarter. Twenty pages of writing that paid for the engagement five times over.',
-    name: 'Folake Adeleke',
-    role: 'Head of Platform',
-    company: 'Moniepoint',
-    initials: 'FA',
-    avatar: u('photo-1438761681033-6461ffad8d80'),
-  },
+  }
 ];

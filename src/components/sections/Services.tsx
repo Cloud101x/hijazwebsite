@@ -14,10 +14,10 @@ interface Service {
 const services: Service[] = [
   {
     index: '01',
-    title: 'Product Engineering',
+    title: 'IT Consulting',
     description:
-      'End-to-end engineering for complex web products. From whiteboard to scaled production with zero-downtime deploys.',
-    capabilities: ['React / Next', 'TypeScript', 'Edge runtimes', 'Design systems'],
+      'Strategic technology advisory to align your infrastructure with your business goals. We plan, assess, and guide your digital transformation from the ground up.',
+    capabilities: ['Tech strategy', 'Infrastructure planning', 'Digital transformation', 'Security & compliance'],
     icon: (
       <svg viewBox="0 0 24 24" className="h-5 w-5" fill="none" stroke="currentColor" strokeWidth="1.6">
         <path strokeLinecap="round" strokeLinejoin="round" d="M9 8l-4 4 4 4M15 8l4 4-4 4" />
@@ -27,10 +27,10 @@ const services: Service[] = [
   },
   {
     index: '02',
-    title: 'Platform & Infra',
+    title: 'Web Design & Development',
     description:
-      'Resilient cloud platforms, distributed systems, and the developer experience that lets your team move at light speed.',
-    capabilities: ['Kubernetes', 'Postgres / Cockroach', 'Terraform', 'Observability'],
+      'Custom websites and web applications built with modern frameworks. Responsive, performant, and crafted to convert visitors into customers.',
+    capabilities: ['React / Next.js', 'Responsive design', 'UI/UX', 'E-commerce'],
     icon: (
       <svg viewBox="0 0 24 24" className="h-5 w-5" fill="none" stroke="currentColor" strokeWidth="1.6">
         <path strokeLinecap="round" strokeLinejoin="round" d="M4 7l8-4 8 4-8 4-8-4zM4 12l8 4 8-4M4 17l8 4 8-4" />
@@ -39,23 +39,23 @@ const services: Service[] = [
   },
   {
     index: '03',
-    title: 'AI Systems',
+    title: 'Business Automation',
     description:
-      'Production-grade AI products: agents, retrieval pipelines, evaluations, and LLM-native interfaces that ship safely.',
-    capabilities: ['LLM orchestration', 'Vector search', 'Evals', 'Streaming UI'],
+      'Streamline your operations with intelligent automation. From workflow orchestration to CRM integration, we eliminate bottlenecks and free your team to focus on what matters.',
+    capabilities: ['Workflow automation', 'CRM integration', 'Process optimization', 'Custom ERP'],
     icon: (
       <svg viewBox="0 0 24 24" className="h-5 w-5" fill="none" stroke="currentColor" strokeWidth="1.6">
-        <path strokeLinecap="round" strokeLinejoin="round" d="M12 3v3M12 18v3M3 12h3M18 12h3M5.6 5.6l2.1 2.1M16.3 16.3l2.1 2.1M5.6 18.4l2.1-2.1M16.3 7.7l2.1-2.1" />
-        <circle cx="12" cy="12" r="3.2" />
+        <path strokeLinecap="round" strokeLinejoin="round" d="M4 4v16h16" />
+        <path d="M7 16l4-6 4 2 4-5" strokeLinecap="round" strokeLinejoin="round" />
       </svg>
     ),
   },
   {
     index: '04',
-    title: 'Brand & Interface',
+    title: 'Software Design & Development',
     description:
-      'Award-caliber visual systems and motion language. The opinionated craft that makes your product feel inevitable.',
-    capabilities: ['Identity', 'Design system', 'Motion', 'Marketing'],
+      'End-to-end custom software engineering. We take your idea from whiteboard to production with clean architecture, scalable code, and rapid delivery.',
+    capabilities: ['Custom software', 'MVP development', 'Legacy modernization', 'API development'],
     icon: (
       <svg viewBox="0 0 24 24" className="h-5 w-5" fill="none" stroke="currentColor" strokeWidth="1.6">
         <path strokeLinecap="round" strokeLinejoin="round" d="M3 19h18M5 16l4-9 3 6 2-3 5 6" />
@@ -64,27 +64,27 @@ const services: Service[] = [
   },
   {
     index: '05',
-    title: 'Mobile & Native',
+    title: 'Branding',
     description:
-      'iOS, Android, and cross-platform clients with the polish, motion, and performance of a flagship app.',
-    capabilities: ['Swift', 'Kotlin', 'React Native', 'Offline-first'],
+      'Distinctive brand identities that leave a lasting impression. Logo design, visual systems, and brand strategy that communicates your story with clarity and impact.',
+    capabilities: ['Brand identity', 'Logo design', 'Visual strategy', 'Brand guidelines'],
     icon: (
       <svg viewBox="0 0 24 24" className="h-5 w-5" fill="none" stroke="currentColor" strokeWidth="1.6">
-        <rect x="7" y="3" width="10" height="18" rx="2" />
-        <path d="M11 18h2" strokeLinecap="round" />
+        <circle cx="11" cy="11" r="6" />
+        <path d="M20 20l-4.5-4.5" strokeLinecap="round" />
       </svg>
     ),
   },
   {
     index: '06',
-    title: 'Strategy & Audit',
+    title: 'Digital Marketing',
     description:
-      'Architectural reviews, performance audits, and roadmap design for teams who want a second senior brain in the room.',
-    capabilities: ['Tech audit', 'Roadmaps', 'Hiring', 'Advisory'],
+      'Data-driven marketing that grows your reach and revenue. SEO, social media, content strategy, and paid campaigns engineered for measurable results.',
+    capabilities: ['SEO', 'Social media', 'Content strategy', 'Paid advertising'],
     icon: (
       <svg viewBox="0 0 24 24" className="h-5 w-5" fill="none" stroke="currentColor" strokeWidth="1.6">
-        <circle cx="11" cy="11" r="6" />
-        <path d="M20 20l-4.5-4.5" strokeLinecap="round" />
+        <path strokeLinecap="round" strokeLinejoin="round" d="M12 3v3M12 18v3M3 12h3M18 12h3M5.6 5.6l2.1 2.1M16.3 16.3l2.1 2.1M5.6 18.4l2.1-2.1M16.3 7.7l2.1-2.1" />
+        <circle cx="12" cy="12" r="3.2" />
       </svg>
     ),
   },
@@ -101,11 +101,11 @@ export function Services() {
           eyebrow="Capabilities"
           title={
             <>
-              A vertically integrated <span className="font-serif italic text-[var(--accent)]">studio</span>{' '}
-              <br className="hidden md:block" /> for ambitious software.
+              Full-service digital solutions{' '}
+              <br className="hidden md:block" /> for your business growth.
             </>
           }
-          description="From the first principles sketch to global scale. Six disciplines, one obsessively senior team — operating as a single product organism."
+          description="From strategy to execution. Six integrated disciplines, one committed team — delivering results that move your business forward."
         />
 
         <div className="mt-20 grid grid-cols-1 gap-px overflow-hidden rounded-3xl border border-[var(--border-subtle)] bg-[var(--line)] md:grid-cols-2 lg:grid-cols-3">
@@ -153,7 +153,7 @@ export function Services() {
               </div>
 
               <div className="relative flex items-center gap-2 text-sm text-[var(--text-secondary)] transition-colors duration-300 group-hover:text-[var(--accent)]">
-                <span>Explore practice</span>
+                <span>Learn more</span>
                 <svg
                   className="h-3.5 w-3.5 transition-transform duration-500 group-hover:translate-x-1"
                   viewBox="0 0 20 20"

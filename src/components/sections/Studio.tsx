@@ -8,7 +8,7 @@ const studioImage =
 
 export function Studio() {
   return (
-    <section id="studio" className="relative overflow-hidden py-28 md:py-36">
+    <section id="studio" className="relative hidden overflow-hidden py-28 md:py-36">
       <GlowOrb className="left-[5%] top-1/4" size={620} color="amber" intensity="soft" />
       <GlowOrb className="right-[5%] bottom-0" size={520} color="ember" intensity="soft" />
 

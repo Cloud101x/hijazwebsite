@@ -38,12 +38,8 @@ export function Navbar() {
         )}
       >
         <a href="#top" className="group flex items-center gap-2 sm:gap-2.5">
-          <span className="relative grid h-8 w-8 place-items-center rounded-lg bg-gradient-to-br from-amber via-ember to-[#7a2f00] shadow-ember-sm">
-            <span className="absolute inset-0 rounded-lg bg-gradient-to-br from-white/30 to-transparent opacity-50" />
-            <svg viewBox="0 0 20 20" className="relative h-4 w-4 text-white" fill="none">
-              <path d="M3 17V3h2.5v6.2L13 3h3.2L9.8 8 17 17h-3.4L8 10.5 5.5 12.5V17H3z" fill="currentColor" />
-            </svg>
-          </span>
+       
+              <img src="/logo-light.png" alt="Hijaz Logo" className="h-[60px] w-[60px]" />
           <span className="font-serif text-lg italic tracking-tight text-[var(--text-primary)]">
             Hijaz<span className="text-amber">.</span>
           </span>

@@ -6,16 +6,16 @@ const footerNav = [
     links: ['Manifesto', 'Team', 'Careers', 'Press', 'Contact'],
   },
   {
-    label: 'Practice',
-    links: ['Product Engineering', 'Platform & Infra', 'AI Systems', 'Brand & Interface', 'Mobile & Native'],
+    label: 'Services',
+    links: ['IT Consulting', 'Web Design & Development', 'Business Automation', 'Software Design', 'Branding'],
   },
   {
     label: 'Resources',
     links: ['Field Notes', 'Open source', 'Audits', 'Talks', 'Newsletter'],
   },
   {
-    label: 'Offices',
-    links: ['Abuja · HQ', 'Lagos', 'Accra', 'Nairobi', 'London (satellite)'],
+    label: 'Office',
+    links: ['Mabushi · Abuja', 'Nigeria'],
   },
 ];
 
@@ -38,13 +38,13 @@ export function Footer() {
             </a>
 
             <p className="mt-6 max-w-md text-sm leading-relaxed text-[var(--text-secondary)]">
-              An elite product engineering studio out of Abuja, architecting category-defining
-              software for Africa's most ambitious teams — and the world's. Established 2014.
+              A full-service digital agency based in Abuja, delivering IT consulting, web development,
+              business automation, software engineering, branding, and digital marketing solutions.
             </p>
 
             <address className="mt-4 text-sm not-italic text-[var(--text-tertiary)]">
-              14 Ronald Nyere Street, Central Business District<br />
-              Abuja, FCT 900211, Nigeria
+              Cad Zone, ASTA Galleria Mabushi<br />
+              Abuja, Nigeria
             </address>
 
             <div className="mt-8 flex flex-wrap items-center gap-3">
@@ -116,7 +116,7 @@ export function Footer() {
 
         <div className="mt-16 border-t border-[var(--border-subtle)] py-8 sm:mt-20">
           <div className="flex flex-col items-start justify-between gap-5 text-xs text-[var(--text-tertiary)] md:flex-row md:items-center">
-            <p>© 2025 Hijaz Studio Ltd. RC 1948302 · Engineered in Abuja with quiet obsession.</p>
+            <p>© 2025 Hijaz. All rights reserved. Built in Abuja with purpose.</p>
             <div className="flex flex-wrap items-center gap-x-6 gap-y-2">
               <a href="#" className="transition-colors hover:text-[var(--text-primary)]">
                 Privacy
