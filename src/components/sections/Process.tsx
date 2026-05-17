@@ -71,7 +71,7 @@ export function Process() {
           eyebrow="The process"
           title={
             <>
-              Eleven weeks from <br />
+              weeks from <br />
               <span className="font-serif italic text-[var(--accent)]">whiteboard</span> to global launch.
             </>
           }

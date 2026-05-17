@@ -64,15 +64,8 @@ export function Testimonials() {
               </blockquote>
 
               <figcaption className="relative mt-7 flex items-center gap-4 border-t border-[var(--border-subtle)] pt-5">
-                <div className="relative h-11 w-11 shrink-0 overflow-hidden rounded-full ring-1 ring-amber/30 ring-offset-2 ring-offset-[var(--bg-surface)]">
-                  <img
-                    src={t.avatar}
-                    alt={t.name}
-                    loading="lazy"
-                    decoding="async"
-                    className="absolute inset-0 h-full w-full object-cover"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-br from-amber/10 via-transparent to-transparent mix-blend-overlay" />
+                <div className="grid h-11 w-11 shrink-0 place-items-center rounded-full bg-gradient-to-br from-amber to-ember text-[13px] font-medium text-white shadow-ember-sm ring-1 ring-amber/30 ring-offset-2 ring-offset-[var(--bg-surface)]">
+                  {t.initials}
                 </div>
                 <div>
                   <p className="text-sm font-medium text-[var(--text-primary)]">{t.name}</p>

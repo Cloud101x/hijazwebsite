@@ -47,7 +47,7 @@ export function Hero() {
       {/* Background visuals */}
       <div className="absolute inset-0 -z-10">
         <img
-          src="/clinic.jpg"
+          src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=2400&q=80"
           alt=""
           className="absolute inset-0 h-full w-full object-cover opacity-[0.07]"
           loading="eager"
