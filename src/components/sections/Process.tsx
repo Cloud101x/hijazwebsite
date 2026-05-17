@@ -103,22 +103,22 @@ export function Process() {
                 </div>
 
                 <div className="border-gradient relative overflow-hidden rounded-3xl bg-[var(--card-bg)] p-6 backdrop-blur-xl shadow-card transition-all duration-500 hover:bg-[var(--card-bg-hover)] md:p-8">
-                  <div className="grid grid-cols-1 gap-6 md:grid-cols-[140px_1fr_auto] md:items-start">
+                  <div className="grid grid-cols-[auto_1fr] gap-4 md:grid-cols-[140px_1fr_auto] md:items-start">
                     <div>
-                      <p className="font-serif text-5xl text-gradient-amber">{step.index}</p>
+                      <p className="font-serif text-2xl md:text-5xl text-gradient-amber">{step.index}</p>
                       <p className="mt-1 font-mono text-[11px] uppercase tracking-[0.22em] text-[var(--text-tertiary)]">
                         {step.duration}
                       </p>
                     </div>
                     <div>
-                      <h3 className="text-2xl font-medium text-[var(--text-primary)] md:text-[1.75rem]">
+                      <h3 className="text-xl font-medium text-[var(--text-primary)] md:text-[1.75rem]">
                         {step.title}
                       </h3>
-                      <p className="mt-3 max-w-2xl text-sm leading-relaxed text-[var(--text-secondary)]">
+                      <p className="mt-3 text-sm leading-relaxed text-[var(--text-secondary)]">
                         {step.description}
                       </p>
                     </div>
-                    <div className="flex flex-col gap-1.5 md:items-end">
+                    <div className="col-span-2 flex flex-col gap-1.5 md:col-span-1 md:items-end">
                       <p className="font-mono text-[10px] uppercase tracking-[0.2em] text-[var(--text-tertiary)]">
                         Artifacts
                       </p>

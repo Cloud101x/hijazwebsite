@@ -73,7 +73,7 @@ export function WhyChooseUs() {
                 <div className="absolute -top-24 right-0 h-56 w-56 rounded-full bg-[var(--accent)]/15 opacity-0 blur-3xl transition-opacity duration-700 group-hover:opacity-100" />
               </div>
 
-              <div className="grid grid-cols-[1fr_auto] gap-8">
+              <div className="grid grid-cols-1 gap-4 md:grid-cols-[1fr_auto] md:gap-8">
                 <div>
                   <span className="font-mono text-[11px] uppercase tracking-[0.22em] text-amber/70">
                     {String(i + 1).padStart(2, '0')} — Pillar
@@ -81,7 +81,7 @@ export function WhyChooseUs() {
                   <h3 className="mt-4 text-2xl font-medium text-[var(--text-primary)] md:text-3xl">
                     {pillar.title}
                   </h3>
-                  <p className="mt-4 max-w-md text-sm leading-relaxed text-[var(--text-secondary)]">
+                  <p className="mt-4 text-sm leading-relaxed text-[var(--text-secondary)]">
                     {pillar.description}
                   </p>
                   <ul className="mt-6 space-y-2">
@@ -98,7 +98,9 @@ export function WhyChooseUs() {
                   </ul>
                 </div>
 
-                <PillarVisual variant={pillar.visual} />
+                <div className="hidden md:block">
+                  <PillarVisual variant={pillar.visual} />
+                </div>
               </div>
             </motion.div>
           ))}

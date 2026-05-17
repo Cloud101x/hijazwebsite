@@ -68,7 +68,7 @@ export function TechStack() {
         />
 
         <div className="mt-20 grid grid-cols-1 gap-10 lg:grid-cols-[1.05fr_1fr] lg:items-center">
-          <div className="border-gradient relative overflow-hidden rounded-3xl bg-[var(--card-bg)] p-8 backdrop-blur-xl shadow-card md:p-10">
+          <div className="border-gradient relative overflow-hidden rounded-3xl bg-[var(--card-bg)] p-6 backdrop-blur-xl shadow-card md:p-10">
             <div className="pointer-events-none absolute inset-0 grid-db opacity-20" />
             <div className="pointer-events-none absolute -inset-y-20 -left-20 h-64 w-64 rounded-full bg-[var(--accent)]/10 blur-3xl" />
 
@@ -85,7 +85,7 @@ export function TechStack() {
                     ease: [0.16, 1, 0.3, 1],
                   }}
                   whileHover={{ y: -3, scale: 1.05 }}
-                  className={`group inline-flex items-center gap-2 rounded-full border px-3.5 py-2 text-sm font-medium backdrop-blur-md transition-all duration-300 ${categoryColors[t.category]}`}
+                  className={`group inline-flex items-center gap-1.5 rounded-full border px-2.5 py-1.5 text-xs font-medium backdrop-blur-md transition-all duration-300 md:gap-2 md:px-3.5 md:py-2 md:text-sm ${categoryColors[t.category]}`}
                 >
                   <span className="h-1.5 w-1.5 rounded-full bg-current shadow-[0_0_8px_currentColor]" />
                   <span className="text-[var(--text-primary)] transition-colors group-hover:text-[var(--text-primary)]">
@@ -123,12 +123,12 @@ export function TechStack() {
                 className="group relative overflow-hidden rounded-2xl border border-[var(--border-subtle)] bg-[var(--surface-glass)] p-6 transition-all duration-500 hover:border-amber/30 hover:bg-[var(--surface-glass-hover)]"
               >
                 <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-amber/40 to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
-                <div className="flex items-start justify-between gap-4">
+                <div className="flex flex-col gap-3 md:flex-row md:items-start md:justify-between md:gap-4">
                   <div>
                     <h4 className="text-base font-medium text-[var(--text-primary)]">{item.title}</h4>
                     <p className="mt-2 text-sm leading-relaxed text-[var(--text-secondary)]">{item.desc}</p>
                   </div>
-                  <span className="shrink-0 rounded-full border border-amber/20 bg-[var(--accent)]/5 px-2.5 py-1 text-[10px] font-mono uppercase tracking-[0.16em] text-[var(--accent)]">
+                  <span className="self-start rounded-full border border-amber/20 bg-[var(--accent)]/5 px-2.5 py-1 text-[10px] font-mono uppercase tracking-[0.16em] text-[var(--accent)]">
                     {item.stat}
                   </span>
                 </div>
