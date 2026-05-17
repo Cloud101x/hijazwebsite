@@ -12,9 +12,6 @@ export interface Project {
   scenes: { tag: string; image: string }[];
 }
 
-const u = (id: string, w = 800) =>
-  `https://images.unsplash.com/${id}?auto=format&fit=crop&w=${w}&q=80`;
-
 export const projects: Project[] = [
   {
     index: '01',
@@ -27,31 +24,31 @@ export const projects: Project[] = [
     award: 'Awwwards SOTD',
     metric: { label: 'Time to live', value: '10 wk' },
     tags: ['React Native', 'Go microservices', 'Real-time ledger', 'CBN compliant'],
-    cover: u('photo-1551288049-bebda4e38f71', 1200),
+    cover: '/bank1.jpg',
     scenes: [
-      { tag: 'Dashboard', image: u('photo-1551288049-bebda4e38f71', 600) },
-      { tag: 'Architecture', image: u('photo-1639762681485-074b7f938ba0', 600) },
-      { tag: 'Mobile app', image: u('photo-1644088379091-d574269d422f', 600) },
+      { tag: 'Dashboard', image: '/bank1.jpg' },
+      { tag: 'Analytics', image: '/bank2.jpg' },
+      { tag: 'Mobile app', image: '/bank3.jpg' },
     ],
   },
-  {
-    index: '02',
-    client: 'Kẹlẹ AI',
-    category: 'AI / Enterprise platform',
-    title: 'Multilingual agent platform for African enterprises',
-    description:
-      'A production-grade agent runtime fluent in Yoruba, Igbo, Hausa, Swahili, Amharic, and Pidgin — now powering CX for 11 banks and 4 telcos across the continent.',
-    year: '2025',
-    award: 'Disrupt Africa — Startup of the Year',
-    metric: { label: 'Daily turns', value: '8.4M' },
-    tags: ['LLM orchestration', '6 African languages', 'Voice + chat', 'On-prem deployable'],
-    cover: u('photo-1677442136019-777752548707', 1200),
-    scenes: [
-      { tag: 'Agent shell', image: u('photo-1677442136019-777752548707', 600) },
-      { tag: 'Language eval', image: u('photo-1635776062127-d379bfcba9f8', 600) },
-      { tag: 'Conversation graph', image: u('photo-1517694712202-14dd9538aa97', 600) },
-    ],
-  },
+  // {
+  //   index: '02',
+  //   client: 'Kẹlẹ AI',
+  //   category: 'AI / Enterprise platform',
+  //   title: 'Multilingual agent platform for African enterprises',
+  //   description:
+  //     'A production-grade agent runtime fluent in Yoruba, Igbo, Hausa, Swahili, Amharic, and Pidgin — now powering CX for 11 banks and 4 telcos across the continent.',
+  //   year: '2025',
+  //   award: 'Disrupt Africa — Startup of the Year',
+  //   metric: { label: 'Daily turns', value: '8.4M' },
+  //   tags: ['LLM orchestration', '6 African languages', 'Voice + chat', 'On-prem deployable'],
+  //   cover: '/maps.jpg',
+  //   scenes: [
+  //     { tag: 'Agent shell', image: '/maps.jpg' },
+  //     { tag: 'Deployment', image: '/maps2.jpg' },
+  //     { tag: 'Analytics', image: '/bank1.jpg' },
+  //   ],
+  // },
   {
     index: '03',
     client: 'Sahel Logistics',
@@ -62,11 +59,11 @@ export const projects: Project[] = [
     year: '2024',
     metric: { label: 'On-time rate', value: '99.94%' },
     tags: ['React Native', 'Offline-first', 'Mapbox tiles', 'Postgres + ClickHouse'],
-    cover: u('photo-1581092160562-40aa08ad7819', 1200),
+    cover: '/maps2.jpg',
     scenes: [
-      { tag: 'Rider app', image: u('photo-1581092160562-40aa08ad7819', 600) },
-      { tag: 'Fleet map', image: u('photo-1581090700227-1e37b190418e', 600) },
-      { tag: 'Dispatcher OS', image: u('photo-1597767151904-67d34dd5d29c', 600) },
+      { tag: 'Rider app', image: '/maps2.jpg' },
+      { tag: 'Fleet map', image: '/maps.jpg' },
+      { tag: 'Dispatcher OS', image: '/bank2.jpg' },
     ],
   },
   {
@@ -80,11 +77,11 @@ export const projects: Project[] = [
     award: 'Webby — Africa & Middle East',
     metric: { label: 'Build time', value: '14 wk' },
     tags: ['NDPR compliant', 'Kafka pipelines', 'FHIR fabric', 'React + RSC'],
-    cover: u('photo-1576091160550-2173dba999ef', 1200),
+    cover: '/clinic.jpg',
     scenes: [
-      { tag: 'Clinician console', image: u('photo-1576091160550-2173dba999ef', 600) },
-      { tag: 'Patient timeline', image: u('photo-1551288049-bebda4e38f71', 600) },
-      { tag: 'Data fabric', image: u('photo-1633613286848-e6f43bbafb8d', 600) },
+      { tag: 'Clinician console', image: '/clinic.jpg' },
+      { tag: 'Patient timeline', image: '/clinic2.jpg' },
+      { tag: 'Data fabric', image: '/clinic3.jpg' },
     ],
   },
 ];

@@ -53,9 +53,11 @@ export function CTA() {
                   >
                     Start a project
                   </AmberButton>
-                  <AmberButton variant="ghost">
-                    hello@hijaz.ng
-                  </AmberButton>
+                  <a href="mailto:hijazconsults@gmail.com">
+                    <AmberButton variant="ghost">
+                      hijazconsults@gmail.com
+                    </AmberButton>
+                  </a>
                 </div>
 
                 <div className="mt-10 flex flex-wrap items-center gap-x-8 gap-y-3 text-xs text-[var(--text-tertiary)]">

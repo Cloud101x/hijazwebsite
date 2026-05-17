@@ -3,8 +3,7 @@ import { SectionHeading } from '../ui/SectionHeading';
 import { GlowOrb } from '../ui/GlowOrb';
 import { team } from '../../data/team';
 
-const studioImage =
-  'https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&w=1400&q=80';
+const studioImage = '/clinic2.jpg';
 
 export function Studio() {
   return (
