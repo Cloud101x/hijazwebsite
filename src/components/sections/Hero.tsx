@@ -78,7 +78,7 @@ export function Hero() {
           animate="visible"
           className="mx-auto flex max-w-5xl flex-col items-center text-center"
         >
-          <motion.div variants={fadeUp} className="mb-7">
+          <motion.div variants={fadeUp} className="mb-7 mt-10 md:mt-0">
             <span className="chip">
               <span className="relative flex h-1.5 w-1.5">
                 <span className="absolute inset-0 animate-ping rounded-full bg-amber/60" />

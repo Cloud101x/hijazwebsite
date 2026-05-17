@@ -72,7 +72,7 @@ export function Navbar() {
           </a>
           <a
             href="#contact"
-            className="btn-primary !px-4 !py-2 text-xs sm:!px-5"
+            className="btn-primary !px-4 !py-2 text-xs sm:!px-5 hidden sm:inline-flex"
           >
             Start a project
             <svg className="h-3.5 w-3.5" viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="2">
