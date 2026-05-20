@@ -1,0 +1,125 @@
+/* School — Sapientia · clean SaaS dashboard */
+.school-root {
+  --bg: #F6F8FB;
+  --surface: #FFFFFF;
+  --surface-soft: #F1F4F9;
+  --surface-deep: #E8EDF4;
+  --ink: #0B1220;
+  --ink-soft: #475569;
+  --ink-tertiary: #64748B;
+  --ink-muted: #94A3B8;
+  --line: #E3E8EF;
+  --line-strong: #CBD5E1;
+  --sky: #3B82F6;
+  --sky-soft: rgba(59, 130, 246, 0.12);
+  --sky-deep: #1D4ED8;
+  --cyan: #06B6D4;
+  --cyan-soft: rgba(6, 182, 212, 0.12);
+  --indigo: #6366F1;
+  --rose: #F43F5E;
+  --amber: #F59E0B;
+  --emerald: #10B981;
+
+  background: var(--bg);
+  color: var(--ink);
+  font-family: 'Inter', system-ui, sans-serif;
+}
+
+.school-root .font-display {
+  font-family: 'Manrope', 'Inter', sans-serif;
+  letter-spacing: -0.025em;
+}
+.school-root .font-mono {
+  font-family: 'JetBrains Mono', monospace;
+}
+
+.school-container {
+  width: 100%;
+  max-width: 1480px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+}
+@media (min-width: 768px) {
+  .school-container {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+
+.school-card {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 1rem;
+}
+
+.school-card-soft {
+  background: var(--surface-soft);
+  border: 1px solid var(--line);
+  border-radius: 1rem;
+}
+
+.school-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.25rem 0.7rem;
+  border-radius: 999px;
+  background: var(--surface-soft);
+  border: 1px solid var(--line);
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--ink-soft);
+}
+
+.school-btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.6rem 1.1rem;
+  border-radius: 0.75rem;
+  background: var(--ink);
+  color: #fff;
+  font-size: 13px;
+  font-weight: 500;
+  transition: all 0.3s;
+}
+.school-btn-primary:hover {
+  background: var(--sky-deep);
+  transform: translateY(-1px);
+}
+
+.school-btn-ghost {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.6rem 1.1rem;
+  border-radius: 0.75rem;
+  background: var(--surface);
+  color: var(--ink);
+  border: 1px solid var(--line);
+  font-size: 13px;
+  font-weight: 500;
+  transition: all 0.3s;
+}
+.school-btn-ghost:hover {
+  background: var(--surface-soft);
+  border-color: var(--line-strong);
+}
+
+.school-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.2rem 0.6rem;
+  border-radius: 999px;
+  font-size: 11px;
+  font-weight: 500;
+}
+
+@keyframes school-fade {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.school-fade { animation: school-fade 0.7s cubic-bezier(0.16, 1, 0.3, 1); }

@@ -8,7 +8,7 @@ const navItems = [
   { label: 'Work', href: '#work' },
   { label: 'Process', href: '#process' },
   { label: 'Studio', href: '#studio' },
-  { label: 'Insights', href: '#insights' },
+  { label: 'Showcase', href: '/portfolio' },
 ];
 
 export function Navbar() {
