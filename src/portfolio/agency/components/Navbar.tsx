@@ -39,7 +39,7 @@ export function Navbar() {
       >
         <a href="#top" className="group flex items-center gap-2 sm:gap-2.5">
        
-              <img src="/logo-light.png" alt="Hijaz Logo" className="h-[60px] w-[60px]" />
+              {/* <img src="/logo-light.png" alt="Hijaz Logo" className="h-[60px] w-[60px]" /> */}
           <span className="font-serif text-lg italic tracking-tight text-[var(--text-primary)]">
             Hijaz<span className="text-amber">.</span>
           </span>
